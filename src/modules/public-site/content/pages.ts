@@ -72,12 +72,12 @@ const en: LocalizedPages = {
   academics: {
     signature: "pathways",
     metaDescription:
-      "Explore the developing K-12 academic journey at Universal Academy of Columbus.",
+      "Explore the developing K-8 academic journey at Universal Academy of Columbus.",
     hero: {
       eyebrow: "Academics",
-      title: "A connected K-12 learning journey.",
+      title: "A connected K-8 learning journey.",
       summary:
-        "Each stage should build strong foundations, growing independence, and thoughtful preparation for life after graduation.",
+        "Each stage should build strong foundations, growing independence, and thoughtful preparation for high school.",
     },
     overview: {
       eyebrow: "Grade pathways",
@@ -86,19 +86,19 @@ const en: LocalizedPages = {
     },
     cards: [
       {
-        marker: "K-5",
-        title: "Strong foundations",
+        marker: "K-2",
+        title: "Early foundations",
         body: "Early learning centered on literacy, numeracy, curiosity, and dependable classroom routines.",
       },
       {
-        marker: "6-8",
-        title: "Growing independence",
-        body: "Middle grades that help learners strengthen study habits, critical thinking, and collaboration.",
+        marker: "3-5",
+        title: "Building skills",
+        body: "Elementary grades that deepen literacy, mathematics, inquiry, and independent learning habits.",
       },
       {
-        marker: "9-12",
-        title: "Prepared next steps",
-        body: "High school planning that connects graduation requirements with college, career, and service goals.",
+        marker: "6-8",
+        title: "Ready for high school",
+        body: "Middle grades that strengthen study habits, critical thinking, collaboration, and preparation for high school.",
       },
     ],
     feature: {
@@ -114,7 +114,7 @@ const en: LocalizedPages = {
     },
     callout: {
       title: "Academic content review",
-      body: "Course names, support programs, schedules, graduation data, and performance claims remain unpublished until approved.",
+      body: "Course names, support programs, schedules, and performance claims remain unpublished until approved.",
       status: "Academic owner approval required",
     },
   },
@@ -343,11 +343,11 @@ const ar: LocalizedPages = {
   },
   academics: {
     ...en.academics,
-    metaDescription: "استكشف الرحلة الأكاديمية من الروضة إلى الصف الثاني عشر في UAC.",
+    metaDescription: "استكشف الرحلة الأكاديمية من الروضة إلى الصف الثامن في UAC.",
     hero: {
       eyebrow: "الأكاديميات",
-      title: "رحلة تعليمية مترابطة من الروضة إلى الصف الثاني عشر.",
-      summary: "تبني كل مرحلة أساساً قوياً واستقلالاً متزايداً واستعداداً للحياة بعد التخرج.",
+      title: "رحلة تعليمية مترابطة من الروضة إلى الصف الثامن.",
+      summary: "تبني كل مرحلة أساساً قوياً واستقلالاً متزايداً واستعداداً للمرحلة الثانوية.",
     },
     overview: {
       eyebrow: "المراحل الدراسية",
@@ -356,19 +356,19 @@ const ar: LocalizedPages = {
     },
     cards: [
       {
-        marker: "K-5",
-        title: "أساس قوي",
+        marker: "K-2",
+        title: "الأساس المبكر",
         body: "تعلم مبكر يركز على القراءة والحساب والفضول وروتين الصف.",
       },
       {
-        marker: "6-8",
-        title: "استقلال متزايد",
-        body: "مرحلة تنمي عادات الدراسة والتفكير النقدي والتعاون.",
+        marker: "3-5",
+        title: "بناء المهارات",
+        body: "مرحلة تعمق القراءة والرياضيات والاستقصاء وعادات التعلم المستقل.",
       },
       {
-        marker: "9-12",
-        title: "خطوات مستقبلية",
-        body: "تخطيط يربط التخرج بأهداف الكلية والعمل والخدمة.",
+        marker: "6-8",
+        title: "الاستعداد للمرحلة الثانوية",
+        body: "مرحلة تنمي عادات الدراسة والتفكير النقدي والتعاون والاستعداد للمرحلة الثانوية.",
       },
     ],
     feature: {
@@ -561,10 +561,10 @@ const so: LocalizedPages = {
   },
   academics: {
     ...en.academics,
-    metaDescription: "Baro safarka waxbarasho ee K-12 ee UAC.",
+    metaDescription: "Baro safarka waxbarasho ee K-8 ee UAC.",
     hero: {
       eyebrow: "Waxbarashada",
-      title: "Safar waxbarasho oo isku xidhan K-12.",
+      title: "Safar waxbarasho oo isku xidhan K-8.",
       summary:
         "Marxalad kastaa waxay dhistaa aasaas, madaxbannaani, iyo u diyaar garow mustaqbalka.",
     },
@@ -575,19 +575,19 @@ const so: LocalizedPages = {
     },
     cards: [
       {
-        marker: "K-5",
-        title: "Aasaas xooggan",
+        marker: "K-2",
+        title: "Aasaaska hore",
         body: "Akhris, xisaab, xiise, iyo hab fasal oo joogto ah.",
       },
       {
-        marker: "6-8",
-        title: "Madaxbannaani",
-        body: "Dhaqan waxbarasho, fikir qoto dheer, iyo wada shaqayn.",
+        marker: "3-5",
+        title: "Dhisidda xirfadaha",
+        body: "Akhris, xisaab, baaritaan, iyo caadooyin waxbarasho oo madaxbannaan.",
       },
       {
-        marker: "9-12",
-        title: "Tallaabooyinka mustaqbalka",
-        body: "Qorshe ku xira qalin-jabinta jaamacad, shaqo, iyo adeeg.",
+        marker: "6-8",
+        title: "U diyaar garowga dugsiga sare",
+        body: "Caadooyin waxbarasho, fikir qoto dheer, wada shaqayn, iyo u diyaar garowga dugsiga sare.",
       },
     ],
     feature: {

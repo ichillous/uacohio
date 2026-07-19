@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     default: "Universal Academy of Columbus",
     template: "%s | Universal Academy of Columbus",
   },
-  description: "A multilingual K-12 school experience for Columbus families.",
+  description: "A multilingual K-8 school experience for Columbus families.",
 };
 
 export function generateStaticParams() {

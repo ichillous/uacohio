@@ -71,11 +71,11 @@ export const homeContent: Record<Locale, HomeContent> = {
       eyebrow: "A Columbus school community",
       title: "A strong foundation for every learner.",
       summary:
-        "Universal Academy brings rigorous learning, character, and a welcoming multilingual community together from kindergarten through graduation.",
+        "Universal Academy brings rigorous learning, character, and a welcoming multilingual community together from kindergarten through eighth grade.",
       primaryAction: "Explore enrollment",
       secondaryAction: "Plan a visit",
       highlights: [
-        { value: "K-12", label: "One learning community" },
+        { value: "K-8", label: "One learning community" },
         { value: "3", label: "Website languages" },
         { value: "Columbus", label: "Rooted in our city" },
       ],
@@ -93,7 +93,7 @@ export const homeContent: Record<Locale, HomeContent> = {
         },
         {
           title: "Academic growth",
-          body: "A clear K-12 learning path helps students build skills and prepare for what comes next.",
+          body: "A clear K-8 learning path helps students build skills and prepare for what comes next.",
           icon: "book",
         },
         {
@@ -111,13 +111,9 @@ export const homeContent: Record<Locale, HomeContent> = {
     academics: {
       eyebrow: "The academic journey",
       title: "Every grade builds toward confident next steps.",
-      body: "The UAC experience is designed as a connected journey: strong early foundations, growing independence, and thoughtful preparation for life after graduation.",
+      body: "The UAC experience is designed as a connected journey: strong early foundations, growing independence, and thoughtful preparation for a confident transition to high school.",
       visualLabel: "Classroom photography coming after content approval",
-      points: [
-        "Foundational literacy",
-        "Purposeful student support",
-        "College and career readiness",
-      ],
+      points: ["Foundational literacy", "Purposeful student support", "High school readiness"],
     },
     values: {
       quote: "Knowledge grows further when character grows with it.",
@@ -133,7 +129,7 @@ export const homeContent: Record<Locale, HomeContent> = {
       action: "Enrollment form coming next",
     },
     footer: {
-      summary: "A multilingual K-12 school experience for Columbus families.",
+      summary: "A multilingual K-8 school experience for Columbus families.",
       note: "Launch content is pending final school review.",
     },
   },
@@ -148,11 +144,11 @@ export const homeContent: Record<Locale, HomeContent> = {
       eyebrow: "مجتمع مدرسي في كولومبوس",
       title: "أساس قوي لكل متعلم.",
       summary:
-        "تجمع الأكاديمية العالمية بين التعلم الجاد وبناء الشخصية ومجتمع متعدد اللغات من الروضة حتى التخرج.",
+        "تجمع الأكاديمية العالمية بين التعلم الجاد وبناء الشخصية ومجتمع متعدد اللغات من الروضة حتى الصف الثامن.",
       primaryAction: "استكشف التسجيل",
       secondaryAction: "خطط لزيارة",
       highlights: [
-        { value: "K-12", label: "مجتمع تعليمي واحد" },
+        { value: "K-8", label: "مجتمع تعليمي واحد" },
         { value: "3", label: "لغات للموقع" },
         { value: "كولومبوس", label: "جزء من مدينتنا" },
       ],
@@ -170,7 +166,7 @@ export const homeContent: Record<Locale, HomeContent> = {
         },
         {
           title: "النمو الأكاديمي",
-          body: "مسار تعليمي واضح من الروضة إلى الصف الثاني عشر يهيئ الطلاب للمستقبل.",
+          body: "مسار تعليمي واضح من الروضة إلى الصف الثامن يهيئ الطلاب للمستقبل.",
           icon: "book",
         },
         {
@@ -188,9 +184,9 @@ export const homeContent: Record<Locale, HomeContent> = {
     academics: {
       eyebrow: "الرحلة الأكاديمية",
       title: "كل صف يبني خطوة واثقة نحو المستقبل.",
-      body: "صممت تجربة UAC كرحلة مترابطة تبدأ بأساس قوي وتنمي الاستقلال وتستعد للحياة بعد التخرج.",
+      body: "صممت تجربة UAC كرحلة مترابطة تبدأ بأساس قوي وتنمي الاستقلال وتستعد للانتقال بثقة إلى المرحلة الثانوية.",
       visualLabel: "ستضاف صور الصفوف بعد اعتماد المحتوى",
-      points: ["مهارات القراءة الأساسية", "دعم هادف للطلاب", "الاستعداد للكلية والعمل"],
+      points: ["مهارات القراءة الأساسية", "دعم هادف للطلاب", "الاستعداد للمرحلة الثانوية"],
     },
     values: {
       quote: "تنمو المعرفة أكثر عندما تنمو معها الشخصية.",
@@ -221,11 +217,11 @@ export const homeContent: Record<Locale, HomeContent> = {
       eyebrow: "Bulsho dugsiyeed Columbus ku taal",
       title: "Aasaas adag oo arday kasta leh.",
       summary:
-        "Universal Academy waxay isku keentaa waxbarasho adag, akhlaaq, iyo bulsho luqado badan ku hadasha laga bilaabo kindergarten ilaa qalin-jabinta.",
+        "Universal Academy waxay isku keentaa waxbarasho adag, akhlaaq, iyo bulsho luqado badan ku hadasha laga bilaabo kindergarten ilaa fasalka siddeedaad.",
       primaryAction: "Baro diiwaangelinta",
       secondaryAction: "Qorshee booqasho",
       highlights: [
-        { value: "K-12", label: "Hal bulsho waxbarasho" },
+        { value: "K-8", label: "Hal bulsho waxbarasho" },
         { value: "3", label: "Luqadaha bogga" },
         { value: "Columbus", label: "Magaaladeenna ku xidhan" },
       ],
@@ -243,7 +239,7 @@ export const homeContent: Record<Locale, HomeContent> = {
         },
         {
           title: "Koboc waxbarasho",
-          body: "Jid waxbarasho oo K-12 ah ayaa ardayda u diyaariya tallaabada xigta.",
+          body: "Jid waxbarasho oo K-8 ah ayaa ardayda u diyaariya tallaabada xigta.",
           icon: "book",
         },
         {
@@ -266,7 +262,7 @@ export const homeContent: Record<Locale, HomeContent> = {
       points: [
         "Aasaaska akhriska",
         "Taageero arday oo ujeeddo leh",
-        "U diyaar garow jaamacad iyo shaqo",
+        "U diyaar garowga dugsiga sare",
       ],
     },
     values: {
