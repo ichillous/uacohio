@@ -6,6 +6,9 @@
 !.env.example
 node_modules/
 .next/
+.open-next/
+.wrangler/
+.dev.vars*
 coverage/
 playwright-report/
 test-results/
