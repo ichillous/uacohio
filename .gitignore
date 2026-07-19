@@ -1,0 +1,15 @@
+.DS_Store
+.claude/state/
+.harness-mem/
+.env
+.env.*
+!.env.example
+node_modules/
+.next/
+coverage/
+playwright-report/
+test-results/
+output/playwright/
+.playwright-cli/
+*.log
+*.tsbuildinfo
