@@ -5,6 +5,7 @@ import type { PublicPageSlug } from "./routes";
 export interface PublicPageContent {
   callout: { body: string; status: string; title: string };
   cards: Array<{ body: string; marker: string; title: string }>;
+  contactDetails?: Array<{ href?: string; label: string; lines: string[] }>;
   feature: { body: string; eyebrow: string; items: string[]; title: string };
   hero: { eyebrow: string; summary: string; title: string };
   metaDescription: string;
@@ -18,17 +19,17 @@ const en: LocalizedPages = {
   admissions: {
     signature: "journey",
     metaDescription:
-      "Learn about the developing admissions journey at Universal Academy of Columbus.",
+      "Learn about admissions at Universal Academy of Columbus and take your family’s next step.",
     hero: {
       eyebrow: "Admissions",
       title: "A clear path from first question to a confident next step.",
       summary:
-        "Explore how families will learn about UAC, connect with the school, plan a visit, and prepare for enrollment.",
+        "Learn about UAC, connect with the school, plan a visit, and prepare for enrollment with confidence.",
     },
     overview: {
       eyebrow: "The family journey",
       title: "Four steps, with guidance at every point.",
-      body: "This page establishes the intended journey. Exact eligibility, documents, deadlines, and response times still require approval from the school’s admissions owner.",
+      body: "Begin by learning about UAC, asking questions, and getting to know the community. Each conversation should leave your family with a clear next step.",
     },
     cards: [
       {
@@ -49,13 +50,13 @@ const en: LocalizedPages = {
       {
         marker: "04",
         title: "Prepare to enroll",
-        body: "Receive school-approved instructions about forms, dates, and required documents.",
+        body: "Get clear guidance about forms, important dates, and the documents your family may need.",
       },
     ],
     feature: {
       eyebrow: "Designed for families",
-      title: "The online interest form will stay short and purposeful.",
-      body: "The form will collect only the information needed for a first conversation. Sensitive academic, medical, immigration, and disciplinary information is outside this first workflow.",
+      title: "Start with a simple, useful conversation.",
+      body: "Tell us what your family hopes to learn, which grade you are considering, and the best language for your conversation.",
       items: [
         "Choose a preferred language",
         "Request enrollment information",
@@ -64,25 +65,24 @@ const en: LocalizedPages = {
       ],
     },
     callout: {
-      title: "Enrollment form coming next",
-      body: "The form will open after UAC approves the exact fields, consent notice, response owner, and retention policy.",
-      status: "Content and workflow review pending",
+      title: "Ready to learn more?",
+      body: "Explore UAC’s values, prepare your questions, and plan a visit to see whether our community is the right fit for your family.",
+      status: "Your next step",
     },
   },
   academics: {
     signature: "pathways",
-    metaDescription:
-      "Explore the developing K-8 academic journey at Universal Academy of Columbus.",
+    metaDescription: "Explore the K-8 academic journey at Universal Academy of Columbus.",
     hero: {
       eyebrow: "Academics",
       title: "A connected K-8 learning journey.",
       summary:
-        "Each stage should build strong foundations, growing independence, and thoughtful preparation for high school.",
+        "Each stage builds strong foundations, growing independence, and thoughtful preparation for high school.",
     },
     overview: {
       eyebrow: "Grade pathways",
       title: "One journey, shaped for each stage of growth.",
-      body: "The structure below is a design framework, not a published course catalog. Curriculum names and program claims require academic-owner review.",
+      body: "From early foundations through the middle grades, students grow through age-appropriate challenges, steady support, and meaningful opportunities to think independently.",
     },
     cards: [
       {
@@ -104,7 +104,7 @@ const en: LocalizedPages = {
     feature: {
       eyebrow: "A focused school day",
       title: "Learning, reflection, movement, and support belong in one rhythm.",
-      body: "The final daily schedule will come from the school. The website will explain the rhythm without publishing times or offerings that have not been verified.",
+      body: "A purposeful school day gives students time to build core skills, reflect, move, collaborate, and receive the support they need to keep growing.",
       items: [
         "Core academic learning",
         "Student support and intervention",
@@ -113,15 +113,15 @@ const en: LocalizedPages = {
       ],
     },
     callout: {
-      title: "Academic content review",
-      body: "Course names, support programs, schedules, and performance claims remain unpublished until approved.",
-      status: "Academic owner approval required",
+      title: "Growing with purpose at every stage",
+      body: "UAC’s K-8 journey helps learners strengthen essential skills, develop responsibility, and approach high school with confidence.",
+      status: "The K-8 journey",
     },
   },
   "student-life": {
     signature: "mosaic",
     metaDescription:
-      "See how the UAC website will present student life, activities, and belonging.",
+      "Discover student life, participation, service, and belonging at Universal Academy of Columbus.",
     hero: {
       eyebrow: "Student life",
       title: "More than a school day—a place to participate and belong.",
@@ -131,23 +131,23 @@ const en: LocalizedPages = {
     overview: {
       eyebrow: "Beyond the classroom",
       title: "A fuller picture of how students grow together.",
-      body: "These categories are ready for school-approved programs and photography. No club, sport, event, or accommodation is presented as currently available until confirmed.",
+      body: "Growth happens wherever students create, collaborate, move, serve, and build meaningful relationships with their peers and community.",
     },
     cards: [
       {
         marker: "Create",
         title: "Arts and expression",
-        body: "A future home for visual arts, writing, performance, and student work.",
+        body: "Creative experiences give students room to communicate ideas, practice new skills, and share their work.",
       },
       {
         marker: "Build",
         title: "Clubs and interests",
-        body: "Space for approved clubs that help students collaborate and explore new skills.",
+        body: "Shared interests help students collaborate, try something new, and discover their strengths.",
       },
       {
         marker: "Move",
         title: "Athletics",
-        body: "A clear presentation of confirmed teams, seasons, eligibility, and participation guidance.",
+        body: "Movement encourages healthy habits, teamwork, perseverance, and confidence.",
       },
       {
         marker: "Serve",
@@ -157,41 +157,40 @@ const en: LocalizedPages = {
       {
         marker: "Gather",
         title: "Family events",
-        body: "School-approved calendars, celebrations, and ways for families to participate.",
+        body: "Gatherings create opportunities for families to connect, celebrate, and strengthen the school community.",
       },
     ],
     feature: {
-      eyebrow: "Content with care",
-      title: "Real student stories require real consent.",
-      body: "Launch photography will be selected and approved by UAC. Images of minors need documented permission, purposeful use, and accessible descriptions.",
+      eyebrow: "The whole child",
+      title: "Belonging gives students room to grow.",
+      body: "Student life supports social confidence, responsible choices, healthy relationships, and the courage to contribute.",
       items: [
-        "Approved program inventory",
-        "Family media consent",
-        "Accurate event dates",
-        "Accessible image descriptions",
+        "Creative expression",
+        "Teamwork and movement",
+        "Service and leadership",
+        "Family connection",
       ],
     },
     callout: {
-      title: "Student-life gallery in preparation",
-      body: "The current geometric tiles intentionally reserve space without placing sample children or unapproved activities on the site.",
-      status: "Photography and program inventory pending",
+      title: "Every student deserves to feel known.",
+      body: "A strong school community makes space for students to participate, form friendships, and contribute in ways that reflect their strengths.",
+      status: "Participation and belonging",
     },
   },
   about: {
     signature: "values",
-    metaDescription:
-      "Learn about the developing mission, values, and leadership presentation for Universal Academy of Columbus.",
+    metaDescription: "Learn about the purpose and values of Universal Academy of Columbus.",
     hero: {
       eyebrow: "About UAC",
       title: "A community shaped by knowledge, character, and belonging.",
       summary:
-        "This page will help families understand what UAC stands for, how the school serves students, and who is accountable for its direction.",
+        "Learn what UAC stands for and how knowledge, faith, service, and community shape the educational journey.",
     },
     overview: {
-      eyebrow: "Mission draft",
+      eyebrow: "Our purpose",
       title:
         "Educate the whole learner and prepare each student to contribute with excellence and care.",
-      body: "This working statement reflects the saved design direction. It remains clearly marked as a draft until the school approves its official mission language.",
+      body: "We nurture academic, spiritual, and social growth so students can meet the future with wisdom, confidence, and care for others.",
     },
     cards: [
       {
@@ -221,36 +220,34 @@ const en: LocalizedPages = {
       },
     ],
     feature: {
-      eyebrow: "Leadership",
-      title: "Families should know who leads each part of the school.",
-      body: "The final page will publish approved names, roles, biographies, and photos. Placeholder people and invented credentials are intentionally excluded.",
+      eyebrow: "Family partnership",
+      title: "Education is strongest when school and family grow together.",
+      body: "Open communication and shared purpose help families understand the learning journey and support each child with consistency.",
       items: [
-        "Head of school",
-        "Academic leadership",
-        "Student support leadership",
-        "Family and admissions contact",
+        "Clear communication",
+        "Respectful relationships",
+        "Shared responsibility",
+        "A welcoming community",
       ],
     },
     callout: {
-      title: "Official school story pending",
-      body: "Founding dates, governance, authorizer details, accreditations, and leadership biographies require source documents and owner approval.",
-      status: "Institutional fact review required",
+      title: "A community built together",
+      body: "UAC brings students, families, and educators together around a shared commitment to knowledge, character, faith, and service.",
+      status: "Our shared commitment",
     },
   },
   contact: {
     signature: "welcome",
-    metaDescription:
-      "Plan how to contact or visit Universal Academy of Columbus once official details are approved.",
+    metaDescription: "Prepare to contact or visit Universal Academy of Columbus.",
     hero: {
       eyebrow: "Contact and visit",
       title: "Start with a question. Leave with a clear next step.",
-      summary:
-        "The contact experience will help families ask questions, request a visit, and connect in English, Arabic, or Somali.",
+      summary: "Ask questions, plan a visit, and connect with UAC in English, Arabic, or Somali.",
     },
     overview: {
       eyebrow: "Plan a useful visit",
       title: "Know what you want to learn before you arrive.",
-      body: "Official address, phone, email, office hours, directions, and accessibility information are intentionally withheld until UAC confirms them.",
+      body: "Think about your child’s grade, your family’s priorities, and the questions that will help you understand the UAC experience.",
     },
     cards: [
       {
@@ -270,20 +267,21 @@ const en: LocalizedPages = {
       },
     ],
     feature: {
-      eyebrow: "Contact details",
-      title: "Verified information will appear here before launch.",
-      body: "The prototype contained sample contact information. This implementation replaces it with a review state so no family is sent to the wrong place or person.",
-      items: [
-        "Campus address and map",
-        "Main phone and approved messaging channels",
-        "General and admissions email",
-        "Office and tour hours",
-      ],
+      eyebrow: "Reach UAC",
+      title: "Contact Information",
+      body: "Call or email during office hours, or visit us on East Hudson Street in Columbus.",
+      items: [],
     },
+    contactDetails: [
+      { label: "Address", lines: ["1843 E Hudson St.", "Columbus, OH 43211"] },
+      { href: "tel:+16148455184", label: "Phone", lines: ["(614) 845-5184"] },
+      { href: "mailto:contact@uacohio.org", label: "Email", lines: ["contact@uacohio.org"] },
+      { label: "Office Hours", lines: ["Monday - Friday", "8:00 AM - 4:00 PM"] },
+    ],
     callout: {
-      title: "Visit request form coming next",
-      body: "The form will be enabled after UAC confirms contact routing, available visit windows, consent language, and response ownership.",
-      status: "Official contact details pending",
+      title: "Schedule a Visit",
+      body: "We’d love to show you around our campus and answer any questions you may have.",
+      status: "Campus visits",
     },
   },
 };
@@ -291,16 +289,17 @@ const en: LocalizedPages = {
 const ar: LocalizedPages = {
   admissions: {
     ...en.admissions,
-    metaDescription: "تعرف على مسار القبول الجاري تطويره في الأكاديمية العالمية في كولومبوس.",
+    metaDescription:
+      "تعرف على القبول في الأكاديمية العالمية في كولومبوس واتخذ الخطوة التالية لعائلتك.",
     hero: {
       eyebrow: "القبول",
       title: "مسار واضح من السؤال الأول إلى الخطوة التالية بثقة.",
-      summary: "تعرف على كيفية استكشاف UAC والتواصل مع المدرسة والتخطيط لزيارة والاستعداد للتسجيل.",
+      summary: "تعرف على UAC، وتواصل مع المدرسة، وخطط لزيارة، واستعد للتسجيل بثقة.",
     },
     overview: {
       eyebrow: "رحلة العائلة",
       title: "أربع خطوات مع الإرشاد في كل مرحلة.",
-      body: "هذه الصفحة توضح المسار المقترح. تحتاج شروط القبول والوثائق والمواعيد إلى اعتماد المدرسة.",
+      body: "ابدأ بالتعرف على UAC وطرح الأسئلة والتواصل مع المجتمع المدرسي. ينبغي أن تنتهي كل محادثة بخطوة تالية واضحة لعائلتك.",
     },
     cards: [
       {
@@ -321,13 +320,13 @@ const ar: LocalizedPages = {
       {
         marker: "04",
         title: "استعد للتسجيل",
-        body: "احصل على تعليمات معتمدة حول النماذج والمواعيد والوثائق.",
+        body: "احصل على إرشادات واضحة حول النماذج والمواعيد المهمة والوثائق التي قد تحتاجها عائلتك.",
       },
     ],
     feature: {
       eyebrow: "مصمم للعائلات",
-      title: "سيكون نموذج الاهتمام قصيراً وواضحاً.",
-      body: "سيجمع النموذج المعلومات اللازمة للمحادثة الأولى فقط، دون معلومات حساسة غير ضرورية.",
+      title: "ابدأ بمحادثة بسيطة ومفيدة.",
+      body: "أخبرنا بما ترغب عائلتك في معرفته، والصف الذي تفكر فيه، واللغة الأنسب للمحادثة.",
       items: [
         "اختيار اللغة المفضلة",
         "طلب معلومات التسجيل",
@@ -336,9 +335,9 @@ const ar: LocalizedPages = {
       ],
     },
     callout: {
-      title: "نموذج التسجيل قيد الإعداد",
-      body: "سيفتح بعد اعتماد الحقول وإشعار الموافقة ومسؤول الرد وسياسة الاحتفاظ.",
-      status: "مراجعة المحتوى وسير العمل معلقة",
+      title: "هل أنتم مستعدون لمعرفة المزيد؟",
+      body: "استكشفوا قيم UAC، وجهزوا أسئلتكم، وخططوا لزيارة لمعرفة مدى ملاءمة مجتمعنا لعائلتكم.",
+      status: "خطوتكم التالية",
     },
   },
   academics: {
@@ -352,7 +351,7 @@ const ar: LocalizedPages = {
     overview: {
       eyebrow: "المراحل الدراسية",
       title: "رحلة واحدة تناسب كل مرحلة من النمو.",
-      body: "هذا الهيكل تصميم أولي وليس دليلاً منشوراً للمقررات. تحتاج البرامج إلى مراجعة المسؤول الأكاديمي.",
+      body: "من الأساس المبكر حتى المرحلة المتوسطة، ينمو الطلاب من خلال تحديات مناسبة لأعمارهم ودعم مستمر وفرص للتفكير باستقلالية.",
     },
     cards: [
       {
@@ -374,18 +373,18 @@ const ar: LocalizedPages = {
     feature: {
       eyebrow: "يوم دراسي مركز",
       title: "التعلم والتأمل والحركة والدعم في إيقاع واحد.",
-      body: "سيأتي الجدول النهائي من المدرسة ولن ننشر أوقاتاً أو برامج قبل التحقق منها.",
+      body: "يمنح اليوم الدراسي الهادف الطلاب وقتاً لبناء المهارات الأساسية والتأمل والحركة والتعاون والحصول على الدعم اللازم.",
       items: ["التعلم الأكاديمي", "دعم الطلاب", "المجتمع والشخصية", "الإثراء والتخطيط للمستقبل"],
     },
     callout: {
-      title: "مراجعة المحتوى الأكاديمي",
-      body: "لن تنشر أسماء المقررات والبرامج والجداول والنتائج قبل اعتمادها.",
-      status: "يتطلب موافقة المسؤول الأكاديمي",
+      title: "نمو هادف في كل مرحلة",
+      body: "تساعد رحلة UAC من الروضة حتى الصف الثامن الطلاب على تقوية مهاراتهم وتحمل المسؤولية والاستعداد للمرحلة الثانوية بثقة.",
+      status: "رحلة الروضة حتى الثامن",
     },
   },
   "student-life": {
     ...en["student-life"],
-    metaDescription: "تعرف على كيفية عرض حياة الطلاب والأنشطة والانتماء في UAC.",
+    metaDescription: "اكتشف حياة الطلاب والمشاركة والخدمة والانتماء في UAC.",
     hero: {
       eyebrow: "حياة الطلاب",
       title: "أكثر من يوم دراسي—مكان للمشاركة والانتماء.",
@@ -394,52 +393,56 @@ const ar: LocalizedPages = {
     overview: {
       eyebrow: "خارج الصف",
       title: "صورة أوسع لنمو الطلاب معاً.",
-      body: "هذه المساحات جاهزة للبرامج والصور المعتمدة. لن نقدم أي نشاط على أنه متاح قبل التأكيد.",
+      body: "يحدث النمو حين يبدع الطلاب ويتعاونون ويتحركون ويخدمون ويبنون علاقات هادفة مع زملائهم ومجتمعهم.",
     },
     cards: [
       {
         marker: "إبداع",
         title: "الفنون والتعبير",
-        body: "مساحة مستقبلية للفنون والكتابة والأداء وأعمال الطلاب.",
+        body: "تمنح التجارب الإبداعية الطلاب مساحة للتعبير عن الأفكار وتنمية المهارات ومشاركة أعمالهم.",
       },
       {
         marker: "بناء",
         title: "النوادي والاهتمامات",
-        body: "مكان للنوادي المعتمدة التي تنمي التعاون والمهارات.",
+        body: "تساعد الاهتمامات المشتركة الطلاب على التعاون وتجربة الجديد واكتشاف نقاط قوتهم.",
       },
       {
         marker: "حركة",
         title: "الرياضة",
-        body: "عرض واضح للفرق والمواسم وشروط المشاركة بعد اعتمادها.",
+        body: "تشجع الحركة العادات الصحية والعمل الجماعي والمثابرة والثقة.",
       },
       { marker: "خدمة", title: "خدمة المجتمع", body: "قصص عن مساهمة الطلاب في المجتمع." },
-      { marker: "لقاء", title: "فعاليات العائلات", body: "تقويمات معتمدة وطرق مشاركة العائلات." },
+      {
+        marker: "لقاء",
+        title: "فعاليات العائلات",
+        body: "تمنح اللقاءات العائلات فرصة للتواصل والاحتفال وتقوية المجتمع المدرسي.",
+      },
     ],
     feature: {
-      eyebrow: "محتوى بمسؤولية",
-      title: "قصص الطلاب الحقيقية تحتاج موافقة حقيقية.",
-      body: "ستختار UAC الصور وتوافق عليها مع توثيق الإذن والاستخدام الهادف والوصف المتاح.",
-      items: ["قائمة برامج معتمدة", "موافقة إعلامية", "تواريخ دقيقة", "وصف متاح للصور"],
+      eyebrow: "رعاية الطالب كاملاً",
+      title: "الانتماء يمنح الطلاب مساحة للنمو.",
+      body: "تدعم حياة الطلاب الثقة الاجتماعية والاختيارات المسؤولة والعلاقات الصحية والشجاعة للمساهمة.",
+      items: ["التعبير الإبداعي", "العمل الجماعي والحركة", "الخدمة والقيادة", "تواصل العائلات"],
     },
     callout: {
-      title: "معرض حياة الطلاب قيد الإعداد",
-      body: "تحجز الأشكال الحالية مكان الصور دون استخدام أطفال أو أنشطة غير معتمدة.",
-      status: "الصور وقائمة البرامج معلقة",
+      title: "كل طالب يستحق أن يشعر بأنه معروف.",
+      body: "يمنح المجتمع المدرسي القوي الطلاب مساحة للمشاركة وتكوين الصداقات والمساهمة بما يعكس نقاط قوتهم.",
+      status: "المشاركة والانتماء",
     },
   },
   about: {
     ...en.about,
-    metaDescription:
-      "تعرف على الرسالة والقيم والقيادة الجاري إعدادها للأكاديمية العالمية في كولومبوس.",
+    metaDescription: "تعرف على غاية الأكاديمية العالمية في كولومبوس وقيمها.",
     hero: {
       eyebrow: "عن UAC",
       title: "مجتمع تصنعه المعرفة والشخصية والانتماء.",
-      summary: "تساعد هذه الصفحة العائلات على فهم ما تمثله UAC ومن يقود المدرسة.",
+      summary:
+        "تعرف على ما تمثله UAC وكيف تشكل المعرفة والإيمان والخدمة والمجتمع الرحلة التعليمية.",
     },
     overview: {
-      eyebrow: "مسودة الرسالة",
+      eyebrow: "غايتنا",
       title: "تعليم المتعلم كاملاً وإعداده للمساهمة بتميز وعناية.",
-      body: "هذه صياغة عمل مستوحاة من التصميم وتبقى مسودة حتى تعتمد المدرسة النص الرسمي.",
+      body: "نرعى النمو الأكاديمي والروحي والاجتماعي ليواجه الطلاب المستقبل بحكمة وثقة وعناية بالآخرين.",
     },
     cards: [
       { marker: "01", title: "المعرفة", body: "تعلم بفضول وانضباط وتوقعات عالية." },
@@ -449,30 +452,29 @@ const ar: LocalizedPages = {
       { marker: "05", title: "التميز", body: "عمل متقن وتحسن مستمر." },
     ],
     feature: {
-      eyebrow: "القيادة",
-      title: "من حق العائلات معرفة من يقود كل جزء من المدرسة.",
-      body: "ستنشر الصفحة الأسماء والأدوار والسير والصور المعتمدة دون أشخاص أو مؤهلات مختلقة.",
-      items: ["رئيس المدرسة", "القيادة الأكاديمية", "قيادة دعم الطلاب", "مسؤول العائلات والقبول"],
+      eyebrow: "الشراكة مع العائلات",
+      title: "يكون التعليم أقوى حين تنمو المدرسة والعائلة معاً.",
+      body: "يساعد التواصل المفتوح والهدف المشترك العائلات على فهم رحلة التعلم ودعم كل طفل باستمرار.",
+      items: ["تواصل واضح", "علاقات قائمة على الاحترام", "مسؤولية مشتركة", "مجتمع مرحب"],
     },
     callout: {
-      title: "قصة المدرسة الرسمية معلقة",
-      body: "تحتاج التواريخ والحوكمة والاعتمادات والسير القيادية إلى مصادر واعتماد.",
-      status: "مراجعة الحقائق المؤسسية مطلوبة",
+      title: "مجتمع نبنيه معاً",
+      body: "تجمع UAC الطلاب والعائلات والمعلمين حول التزام مشترك بالمعرفة والشخصية والإيمان والخدمة.",
+      status: "التزامنا المشترك",
     },
   },
   contact: {
     ...en.contact,
-    metaDescription: "خطط للتواصل مع UAC أو زيارتها بعد اعتماد المعلومات الرسمية.",
+    metaDescription: "استعد للتواصل مع UAC أو زيارتها.",
     hero: {
       eyebrow: "التواصل والزيارة",
       title: "ابدأ بسؤال واخرج بخطوة تالية واضحة.",
-      summary:
-        "ستساعد تجربة التواصل العائلات على طرح الأسئلة وطلب زيارة والتواصل بالعربية أو الإنجليزية أو الصومالية.",
+      summary: "اطرح أسئلتك، وخطط لزيارة، وتواصل مع UAC بالعربية أو الإنجليزية أو الصومالية.",
     },
     overview: {
       eyebrow: "خطط لزيارة مفيدة",
       title: "اعرف ما تريد تعلمه قبل وصولك.",
-      body: "لن ننشر العنوان أو الهاتف أو البريد أو الساعات قبل تأكيد UAC لها.",
+      body: "فكر في صف طفلك وأولويات عائلتك والأسئلة التي ستساعدك على فهم تجربة UAC.",
     },
     cards: [
       {
@@ -488,20 +490,25 @@ const ar: LocalizedPages = {
       { marker: "تواصل", title: "اختر اللغة", body: "أخبر المدرسة باللغة التي تساعد محادثتك." },
     ],
     feature: {
-      eyebrow: "معلومات التواصل",
-      title: "ستظهر المعلومات المعتمدة هنا قبل الإطلاق.",
-      body: "استبدلنا معلومات النموذج التجريبية بحالة مراجعة حتى لا نوجه العائلات إلى جهة خاطئة.",
-      items: [
-        "عنوان الحرم والخريطة",
-        "الهاتف والقنوات المعتمدة",
-        "البريد العام وبريد القبول",
-        "ساعات المكتب والجولات",
-      ],
+      eyebrow: "تواصل مع UAC",
+      title: "معلومات التواصل",
+      body: "اتصل أو راسلنا خلال ساعات الدوام، أو زرنا في شارع إيست هدسون في كولومبوس.",
+      items: [],
     },
+    contactDetails: [
+      { label: "العنوان", lines: ["1843 E Hudson St.", "Columbus, OH 43211"] },
+      { href: "tel:+16148455184", label: "الهاتف", lines: ["(614) 845-5184"] },
+      {
+        href: "mailto:contact@uacohio.org",
+        label: "البريد الإلكتروني",
+        lines: ["contact@uacohio.org"],
+      },
+      { label: "ساعات الدوام", lines: ["الاثنين - الجمعة", "8:00 صباحاً - 4:00 مساءً"] },
+    ],
     callout: {
-      title: "نموذج طلب الزيارة قيد الإعداد",
-      body: "سيتم تفعيله بعد تأكيد توجيه الطلبات والأوقات والموافقة ومسؤول الرد.",
-      status: "معلومات التواصل الرسمية معلقة",
+      title: "حدد موعداً للزيارة",
+      body: "يسعدنا أن نأخذكم في جولة داخل الحرم المدرسي ونجيب عن أي أسئلة لديكم.",
+      status: "زيارات الحرم المدرسي",
     },
   },
 };
@@ -509,7 +516,8 @@ const ar: LocalizedPages = {
 const so: LocalizedPages = {
   admissions: {
     ...en.admissions,
-    metaDescription: "Baro jidka diiwaangelinta ee loo diyaarinayo Universal Academy of Columbus.",
+    metaDescription:
+      "Baro diiwaangelinta Universal Academy of Columbus oo qaad tallaabada xigta ee qoyskaaga.",
     hero: {
       eyebrow: "Diiwaangelinta",
       title: "Jid cad laga bilaabo su’aasha koowaad ilaa tallaabada xigta.",
@@ -518,7 +526,7 @@ const so: LocalizedPages = {
     overview: {
       eyebrow: "Safarka qoyska",
       title: "Afar tallaabo iyo hagitaan joogto ah.",
-      body: "Boggu wuxuu muujinayaa jidka la qorsheeyay. Shuruudaha, dukumentiyada, iyo taariikhaha dugsigu waa inuu ansixiyaa.",
+      body: "Ku bilow inaad UAC barato, su’aalo weydiiso, oo bulshada dugsiga la xiriirto. Wada hadal kastaa waa inuu qoyskaaga siiyo tallaabo xigta oo cad.",
     },
     cards: [
       {
@@ -539,13 +547,13 @@ const so: LocalizedPages = {
       {
         marker: "04",
         title: "Isu diyaari",
-        body: "Hel tilmaamo la ansixiyey oo ku saabsan foomamka iyo dukumentiyada.",
+        body: "Hel hagitaan cad oo ku saabsan foomamka, taariikhaha muhiimka ah, iyo dukumentiyada qoyskaagu u baahan karo.",
       },
     ],
     feature: {
       eyebrow: "Qoysaska loogu talagalay",
-      title: "Foomka xiisuhu wuxuu ahaan doonaa mid gaaban oo cad.",
-      body: "Wuxuu ururin doonaa oo keliya xogta loo baahan yahay wada hadalka koowaad.",
+      title: "Ku bilow wada hadal fudud oo waxtar leh.",
+      body: "Noo sheeg waxa qoyskaagu rabo inuu barto, fasalka aad ka fikirayso, iyo luqadda ugu habboon wada hadalka.",
       items: [
         "Dooro luqadda",
         "Codso xogta diiwaangelinta",
@@ -554,9 +562,9 @@ const so: LocalizedPages = {
       ],
     },
     callout: {
-      title: "Foomka diiwaangelintu wuu soo socdaa",
-      body: "Wuxuu furmi doonaa marka UAC ansixiso xogta, oggolaanshaha, milkiilaha jawaabta, iyo kaydinta.",
-      status: "Dib-u-eegis ayaa socota",
+      title: "Diyaar ma u tahay inaad wax badan barato?",
+      body: "Baro qiyamka UAC, diyaari su’aalahaaga, oo qorshee booqasho si aad u ogaato in bulshadayadu ku habboon tahay qoyskaaga.",
+      status: "Tallaabadaada xigta",
     },
   },
   academics: {
@@ -571,7 +579,7 @@ const so: LocalizedPages = {
     overview: {
       eyebrow: "Heerarka",
       title: "Hal safar oo ku habboon heer kasta.",
-      body: "Qaabkani waa naqshad, mana aha liis koorsooyin la daabacay. Dugsigu waa inuu ansixiyaa barnaamijyada.",
+      body: "Laga bilaabo aasaaska hore ilaa fasallada dhexe, ardaydu waxay ku koraan caqabado da’dooda ku habboon, taageero joogto ah, iyo fursado ay si madax-bannaan ugu fikiraan.",
     },
     cards: [
       {
@@ -593,7 +601,7 @@ const so: LocalizedPages = {
     feature: {
       eyebrow: "Maalin diirad leh",
       title: "Waxbarasho, milicsi, dhaqdhaqaaq, iyo taageero.",
-      body: "Jadwalka kama dambaysta ah dugsiga ayaa bixinaya; wax aan la xaqiijin lama daabici doono.",
+      body: "Maalin dugsiyeed ujeeddo leh waxay ardayda siisaa waqti ay ku dhistaan xirfadaha aasaasiga ah, ku milicsadaan, ku dhaqaaqaan, ku wada shaqeeyaan, kuna helaan taageerada ay u baahan yihiin.",
       items: [
         "Waxbarashada aasaasiga",
         "Taageerada ardayda",
@@ -602,14 +610,14 @@ const so: LocalizedPages = {
       ],
     },
     callout: {
-      title: "Dib-u-eegista waxbarashada",
-      body: "Koorsooyin, barnaamijyo, jadwal, iyo natiijooyin lama daabici doono ilaa la ansixiyo.",
-      status: "Ansixinta hoggaanka waxbarashada ayaa loo baahan yahay",
+      title: "Koboc ujeeddo leh marxalad kasta",
+      body: "Safarka K-8 ee UAC wuxuu ardayda ka caawiyaa inay xoojiyaan xirfadaha, qaataan masuuliyad, oo dugsiga sare u wajahaan kalsooni.",
+      status: "Safarka K-8",
     },
   },
   "student-life": {
     ...en["student-life"],
-    metaDescription: "Baro sida boggu u soo bandhigi doono nolosha ardayga UAC.",
+    metaDescription: "Baro nolosha ardayga, ka qaybgalka, adeegga, iyo ka mid ahaanshaha UAC.",
     hero: {
       eyebrow: "Nolosha ardayga",
       title: "Wax ka badan maalin dugsi—meel laga qaybqaato oo laga mid noqdo.",
@@ -618,23 +626,23 @@ const so: LocalizedPages = {
     overview: {
       eyebrow: "Fasalka ka baxsan",
       title: "Sawir buuxa oo koboca ardayda ah.",
-      body: "Qaybahani waxay sugayaan barnaamijyo iyo sawirro la ansixiyey. Wax aan la xaqiijin lama sheegayo.",
+      body: "Kobocu wuxuu dhacaa marka ardaydu abuuraan, wada shaqeeyaan, dhaqaaqaan, adeegaan, oo xiriir macno leh la dhistaan asxaabtooda iyo bulshadooda.",
     },
     cards: [
       {
         marker: "Abuur",
         title: "Farshaxan",
-        body: "Meel loogu talagalay farshaxanka, qoraalka, iyo shaqada ardayga.",
+        body: "Khibradaha hal-abuurka ahi waxay ardayda siiyaan meel ay fikradahooda ku muujiyaan, xirfado ku bartaan, oo shaqadooda ku wadaagaan.",
       },
       {
         marker: "Dhis",
         title: "Naadiyo",
-        body: "Naadiyo la ansixiyey oo kobciya wada shaqayn iyo xirfado.",
+        body: "Xiisaha la wadaago wuxuu ardayda ka caawiyaa wada shaqayn, tijaabinta wax cusub, iyo ogaanshaha awooddooda.",
       },
       {
         marker: "Dhaqaaq",
         title: "Ciyaaraha",
-        body: "Kooxo, xilliyo, iyo hagitaan la xaqiijiyey.",
+        body: "Dhaqdhaqaaqu wuxuu dhiirrigeliyaa caafimaad, wada shaqayn, adkaysi, iyo kalsooni.",
       },
       {
         marker: "Adeeg",
@@ -644,39 +652,39 @@ const so: LocalizedPages = {
       {
         marker: "Kulmo",
         title: "Dhacdooyinka qoyska",
-        body: "Jadwal iyo siyaabo ay qoysasku uga qaybqaataan.",
+        body: "Kulamadu waxay qoysaska siiyaan fursado ay ku xiriiraan, u dabaaldegaan, oo bulshada dugsiga u xoojiyaan.",
       },
     ],
     feature: {
-      eyebrow: "Nuxur masuul ah",
-      title: "Sheekooyinka ardaydu waxay u baahan yihiin oggolaansho.",
-      body: "UAC ayaa dooranaysa sawirrada, iyadoo la diiwaangelinayo oggolaanshaha iyo sharaxaadda la heli karo.",
+      eyebrow: "Ilmaha oo dhan",
+      title: "Ka mid ahaanshuhu wuxuu ardayda siiyaa meel ay ku koraan.",
+      body: "Nolosha ardaygu waxay taageertaa kalsooni bulsheed, doorashooyin masuuliyad leh, xiriir caafimaad qaba, iyo geesinimada wax ku biirinta.",
       items: [
-        "Barnaamijyo la ansixiyey",
-        "Oggolaanshaha sawirka",
-        "Taariikho sax ah",
-        "Sharaxaad sawir",
+        "Hal-abuur iyo ismuujin",
+        "Wada shaqayn iyo dhaqdhaqaaq",
+        "Adeeg iyo hoggaan",
+        "Xiriirka qoyska",
       ],
     },
     callout: {
-      title: "Sawirrada nolosha ardayga waa la diyaarinayaa",
-      body: "Qaababka hadda jira waxay meel hayaan iyada oo aan la isticmaalin carruur ama hawlo aan la ansixin.",
-      status: "Sawirro iyo barnaamijyo ayaa la sugayaa",
+      title: "Arday kastaa wuxuu mudan yahay in la yaqaan.",
+      body: "Bulsho dugsiyeed xooggan waxay ardayda siisaa meel ay kaga qaybqaataan, saaxiibo ku yeeshaan, oo awooddooda wax ugu biiriyaan.",
+      status: "Ka qaybgal iyo ka mid ahaansho",
     },
   },
   about: {
     ...en.about,
-    metaDescription: "Baro himilada, qiyamka, iyo hoggaanka loo diyaarinayo UAC.",
+    metaDescription: "Baro ujeeddada iyo qiyamka Universal Academy of Columbus.",
     hero: {
       eyebrow: "Nagu saabsan",
       title: "Bulsho ay dhisaan aqoon, akhlaaq, iyo ka mid ahaansho.",
       summary:
-        "Boggu wuxuu qoysaska ka caawinayaa inay fahmaan qiyamka UAC iyo cidda dugsiga hoggaamisa.",
+        "Baro waxa UAC u taagan tahay iyo sida aqoon, iimaan, adeeg, iyo bulsho ay u qaabeeyaan safarka waxbarasho.",
     },
     overview: {
-      eyebrow: "Qabyo himilo",
+      eyebrow: "Ujeeddadayada",
       title: "Bar ardayga oo dhan una diyaari inuu wax ku biiriyo si heer sare ah.",
-      body: "Qoraalkani waa qabyo ka timid jihada naqshadda ilaa dugsigu ansixiyo qoraalka rasmiga ah.",
+      body: "Waxaan kobcinnaa waxbarashada, ruuxda, iyo bulshada ardayga si uu mustaqbalka ugu wajaho xikmad, kalsooni, iyo daryeel dadka kale.",
     },
     cards: [
       { marker: "01", title: "Aqoon", body: "Waxbarasho xiise, nidaam, iyo filasho sare leh." },
@@ -686,36 +694,35 @@ const so: LocalizedPages = {
       { marker: "05", title: "Heer sare", body: "Shaqo wanaagsan iyo horumar joogto ah." },
     ],
     feature: {
-      eyebrow: "Hoggaanka",
-      title: "Qoysasku waa inay ogaadaan cidda hoggaamisa dugsiga.",
-      body: "Magacyo, doorar, taariikh nololeed, iyo sawirro la ansixiyey ayaa la daabici doonaa.",
+      eyebrow: "Iskaashiga qoyska",
+      title: "Waxbarashadu way xoog badan tahay marka dugsiga iyo qoysku wada koraan.",
+      body: "Xiriir furan iyo ujeeddo wadaag ah waxay qoysaska ka caawiyaan inay fahmaan safarka waxbarasho oo ay ilma kasta si joogto ah u taageeraan.",
       items: [
-        "Madaxa dugsiga",
-        "Hoggaanka waxbarashada",
-        "Taageerada ardayda",
-        "Xiriirka qoysaska",
+        "Xiriir cad",
+        "Xiriir ixtiraam leh",
+        "Masuuliyad wadaag ah",
+        "Bulsho soo dhoweyn leh",
       ],
     },
     callout: {
-      title: "Sheekada rasmiga ah waa la sugayaa",
-      body: "Taariikho, maamulka, aqoonsiyada, iyo taariikh nololeedyadu waxay u baahan yihiin ilo iyo ansixin.",
-      status: "Dib-u-eegis xaqiiqo ayaa loo baahan yahay",
+      title: "Bulsho aynu wada dhisno",
+      body: "UAC waxay ardayda, qoysaska, iyo barayaasha ku mideysaa ballan wadaag ah oo aqoon, akhlaaq, iimaan, iyo adeeg ku dhisan.",
+      status: "Ballanqaadkeenna wadajirka ah",
     },
   },
   contact: {
     ...en.contact,
-    metaDescription:
-      "Qorshee sida loola xiriiro ama loo booqdo UAC marka xogta rasmiga ah la ansixiyo.",
+    metaDescription: "Isu diyaari inaad la xiriirto ama booqato UAC.",
     hero: {
       eyebrow: "Xiriir iyo booqasho",
       title: "Su’aal ku bilow, tallaabo cadna ku bax.",
       summary:
-        "Qoysasku waxay codsan doonaan booqasho oo ku xiriiri doonaan Soomaali, Carabi, ama Ingiriisi.",
+        "Weydii su’aalo, qorshee booqasho, oo UAC kula xiriir Soomaali, Carabi, ama Ingiriisi.",
     },
     overview: {
       eyebrow: "Qorshee booqasho",
       title: "Ogow waxa aad rabto inaad barato.",
-      body: "Cinwaan, telefoon, iimayl, iyo saacado lama daabici doono ilaa UAC xaqiijiso.",
+      body: "Ka fikir fasalka ilmahaaga, mudnaanta qoyskaaga, iyo su’aalaha kaa caawinaya inaad fahanto khibradda UAC.",
     },
     cards: [
       {
@@ -735,20 +742,25 @@ const so: LocalizedPages = {
       },
     ],
     feature: {
-      eyebrow: "Xogta xiriirka",
-      title: "Xog la xaqiijiyey ayaa halkan iman doonta.",
-      body: "Xogtii tijaabada ahayd waxaa lagu beddelay xaalad dib-u-eegis si qoysaska meel khaldan loogu dirin.",
-      items: [
-        "Cinwaan iyo khariidad",
-        "Telefoon iyo kanaallo",
-        "Iimayl guud iyo diiwaangelin",
-        "Saacadaha xafiiska",
-      ],
+      eyebrow: "La xiriir UAC",
+      title: "Macluumaadka Xiriirka",
+      body: "Nala soo xiriir telefoon ama iimayl inta lagu jiro saacadaha xafiiska, ama nagu soo booqo East Hudson Street ee Columbus.",
+      items: [],
     },
+    contactDetails: [
+      { label: "Cinwaanka", lines: ["1843 E Hudson St.", "Columbus, OH 43211"] },
+      { href: "tel:+16148455184", label: "Telefoonka", lines: ["(614) 845-5184"] },
+      {
+        href: "mailto:contact@uacohio.org",
+        label: "Iimaylka",
+        lines: ["contact@uacohio.org"],
+      },
+      { label: "Saacadaha Xafiiska", lines: ["Isniin - Jimce", "8:00 subaxnimo - 4:00 galabnimo"] },
+    ],
     callout: {
-      title: "Foomka booqashadu wuu soo socdaa",
-      body: "Wuxuu furmi doonaa marka UAC xaqiijiso jadwalka, oggolaanshaha, iyo cidda ka jawaabaysa.",
-      status: "Xogta rasmiga ah ayaa la sugayaa",
+      title: "Qorshee Booqasho",
+      body: "Waxaan jeclaan lahayn inaan ku tusno xaruntayada oo aan ka jawaabno su’aal kasta oo aad qabto.",
+      status: "Booqashooyinka dugsiga",
     },
   },
 };

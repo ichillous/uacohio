@@ -151,7 +151,8 @@ export function HomePage({ locale }: HomePageProps) {
           <div aria-hidden="true" className="star-field" />
           <div className="shell values-inner">
             <UacMark className="values-mark" />
-            <h2>{content.values.quote}</h2>
+            <h2>“{content.values.quote}”</h2>
+            <cite className="values-attribution">{content.values.attribution}</cite>
             <p>{content.values.body}</p>
           </div>
         </section>
@@ -159,13 +160,7 @@ export function HomePage({ locale }: HomePageProps) {
         <section className="section shell welcome-section" id="visit">
           <div className="welcome-card">
             <p className="eyebrow">{content.welcome.eyebrow}</p>
-            <h2>
-              <span lang="en">Welcome</span>
-              <UacMark className="welcome-mark" />
-              <span lang="ar">أهلاً وسهلاً</span>
-              <UacMark className="welcome-mark" />
-              <span lang="so">Soo dhowow</span>
-            </h2>
+            <h2>{content.welcome.title}</h2>
             <p>{content.welcome.body}</p>
           </div>
         </section>
@@ -176,9 +171,10 @@ export function HomePage({ locale }: HomePageProps) {
               <h2>{content.admissions.title}</h2>
               <p>{content.admissions.body}</p>
             </div>
-            <span className="button button-disabled" role="status">
+            <a className="button button-forest" href={`/${locale}/admissions`}>
               {content.admissions.action}
-            </span>
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         </section>
       </main>

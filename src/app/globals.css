@@ -321,17 +321,6 @@ summary {
   background: var(--color-forest);
 }
 
-.button-disabled {
-  background: rgb(9 76 115 / 82%);
-  color: #fff;
-  cursor: default;
-  text-align: center;
-}
-
-.button-disabled:hover {
-  transform: none;
-}
-
 .button-gold {
   background: var(--color-gold);
   color: var(--color-forest);
@@ -453,7 +442,7 @@ summary {
 
 .hero-highlights {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin: 50px 0 0;
   max-width: 680px;
 }
@@ -764,6 +753,17 @@ summary {
   max-width: 720px;
 }
 
+.values-inner .values-attribution {
+  display: block;
+  margin: -10px auto 22px;
+  color: var(--color-gold-light);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
 .welcome-section {
   padding-block: clamp(64px, 8vw, 96px);
 }
@@ -783,12 +783,6 @@ summary {
   gap: 14px 20px;
   justify-content: center;
   margin-inline: auto;
-}
-
-.welcome-mark {
-  color: var(--color-gold);
-  height: 22px;
-  width: 22px;
 }
 
 .welcome-card > p:last-child {
@@ -1197,6 +1191,52 @@ html[dir="rtl"] .page-feature-copy li {
   padding: 8px 14px 8px 0;
 }
 
+.contact-details-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 30px 0 0;
+}
+
+.contact-detail {
+  background: #ffffff;
+  border: 1px solid #d7eaf4;
+  border-inline-start: 4px solid var(--color-gold);
+  padding: 20px;
+}
+
+.contact-detail dt {
+  color: var(--color-emerald);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  margin-block-end: 8px;
+  text-transform: uppercase;
+}
+
+.contact-detail dd {
+  color: var(--color-forest);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.contact-detail dd span {
+  display: block;
+}
+
+.contact-detail a {
+  color: inherit;
+  text-decoration-color: rgb(11 100 143 / 35%);
+  text-underline-offset: 3px;
+}
+
+.contact-detail a:hover {
+  color: var(--color-emerald);
+  text-decoration-color: currentColor;
+}
+
 .page-callout-wrap {
   padding-block: clamp(60px, 8vw, 92px);
 }
@@ -1225,7 +1265,7 @@ html[dir="rtl"] .page-feature-copy li {
   margin: 14px 0 0;
 }
 
-.review-badge {
+.callout-badge {
   align-items: center;
   color: var(--color-forest);
   display: flex;
@@ -1238,7 +1278,7 @@ html[dir="rtl"] .page-feature-copy li {
   text-transform: uppercase;
 }
 
-.review-badge-mark {
+.callout-badge-mark {
   color: var(--color-emerald);
   height: 44px;
   width: 44px;
@@ -1415,7 +1455,8 @@ html[dir="rtl"] .button span[aria-hidden="true"] {
   .page-card-grid--mosaic,
   .page-card-grid--values,
   .page-card-grid--welcome,
-  .page-feature-copy ul {
+  .page-feature-copy ul,
+  .contact-details-grid {
     grid-template-columns: 1fr;
   }
 

@@ -10,10 +10,10 @@ interface PublicPageProps {
   page: PublicPageSlug;
 }
 
-const reviewLabels: Record<Locale, string> = {
-  en: "UAC review",
-  ar: "مراجعة UAC",
-  so: "Dib-u-eegista UAC",
+const calloutLabels: Record<Locale, string> = {
+  en: "Explore UAC",
+  ar: "استكشف UAC",
+  so: "Baro UAC",
 };
 
 const signatureLabels: Record<
@@ -28,7 +28,7 @@ const signatureLabels: Record<
     },
     academics: {
       kicker: "Learning pathway",
-      primary: "K — 12",
+      primary: "K — 8",
       secondary: "Foundation · Independence · Next steps",
     },
     "student-life": {
@@ -55,7 +55,7 @@ const signatureLabels: Record<
     },
     academics: {
       kicker: "المسار التعليمي",
-      primary: "K — 12",
+      primary: "K — 8",
       secondary: "أساس · استقلال · مستقبل",
     },
     "student-life": {
@@ -78,7 +78,7 @@ const signatureLabels: Record<
     },
     academics: {
       kicker: "Jidka waxbarashada",
-      primary: "K — 12",
+      primary: "K — 8",
       secondary: "Aasaas · Madax-bannaani · Mustaqbal",
     },
     "student-life": {
@@ -154,11 +154,28 @@ export function PublicPage({ locale, page }: PublicPageProps) {
               <p className="eyebrow">{content.feature.eyebrow}</p>
               <h2>{content.feature.title}</h2>
               <p>{content.feature.body}</p>
-              <ul>
-                {content.feature.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              {content.contactDetails ? (
+                <dl className="contact-details-grid">
+                  {content.contactDetails.map((detail) => (
+                    <div className="contact-detail" key={detail.label}>
+                      <dt>{detail.label}</dt>
+                      <dd>
+                        {detail.lines.map((line) => (
+                          <span key={line}>
+                            {detail.href ? <a href={detail.href}>{line}</a> : line}
+                          </span>
+                        ))}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              ) : (
+                <ul>
+                  {content.feature.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         </section>
@@ -170,9 +187,9 @@ export function PublicPage({ locale, page }: PublicPageProps) {
               <h2>{content.callout.title}</h2>
               <p>{content.callout.body}</p>
             </div>
-            <span className="review-badge">
-              <UacMark className="review-badge-mark" />
-              {reviewLabels[locale]}
+            <span className="callout-badge">
+              <UacMark className="callout-badge-mark" />
+              {calloutLabels[locale]}
             </span>
           </div>
         </section>

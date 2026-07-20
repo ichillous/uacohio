@@ -29,8 +29,8 @@ export interface HomeContent {
     visualLabel: string;
     points: string[];
   };
-  values: { quote: string; body: string };
-  welcome: { eyebrow: string; body: string };
+  values: { attribution: string; quote: string; body: string };
+  welcome: { eyebrow: string; title: string; body: string };
   admissions: { title: string; body: string; action: string };
   footer: { summary: string; note: string };
 }
@@ -62,7 +62,7 @@ const sharedNavigation = {
 export const homeContent: Record<Locale, HomeContent> = {
   en: {
     announcement: "Welcoming enrollment interest for 2026-27",
-    portal: "Staff portal · in development",
+    portal: "Kindergarten through eighth grade",
     schoolName: "Universal Academy",
     schoolLocation: "of Columbus",
     navigation: sharedNavigation.en,
@@ -71,17 +71,16 @@ export const homeContent: Record<Locale, HomeContent> = {
       eyebrow: "A Columbus school community",
       title: "A strong foundation for every learner.",
       summary:
-        "Universal Academy brings rigorous learning, character, and a welcoming multilingual community together from kindergarten through eighth grade.",
+        "Universal Academy brings rigorous learning, character, and an inclusive school community together from kindergarten through eighth grade.",
       primaryAction: "Explore enrollment",
       secondaryAction: "Plan a visit",
       highlights: [
         { value: "K-8", label: "One learning community" },
-        { value: "3", label: "Website languages" },
         { value: "Columbus", label: "Rooted in our city" },
       ],
       visualLabel: "Official Universal Academy of Columbus emblem",
     },
-    trustItems: ["Family-centered", "Multilingual welcome", "Clear enrollment guidance"],
+    trustItems: ["Family-centered", "Inclusive and diverse", "Clear enrollment guidance"],
     pillars: {
       eyebrow: "Why families choose UAC",
       title: "Learning shaped by knowledge, character, and belonging.",
@@ -97,8 +96,8 @@ export const homeContent: Record<Locale, HomeContent> = {
           icon: "book",
         },
         {
-          title: "A multilingual welcome",
-          body: "Families can begin exploring UAC in English, Arabic, or Somali from their first visit.",
+          title: "Whole-child growth",
+          body: "Academic, spiritual, and social development work together to help each student grow with purpose and confidence.",
           icon: "globe",
         },
         {
@@ -112,30 +111,32 @@ export const homeContent: Record<Locale, HomeContent> = {
       eyebrow: "The academic journey",
       title: "Every grade builds toward confident next steps.",
       body: "The UAC experience is designed as a connected journey: strong early foundations, growing independence, and thoughtful preparation for a confident transition to high school.",
-      visualLabel: "Classroom photography coming after content approval",
+      visualLabel: "Learning with purpose from kindergarten through eighth grade",
       points: ["Foundational literacy", "Purposeful student support", "High school readiness"],
     },
     values: {
-      quote: "Knowledge grows further when character grows with it.",
-      body: "UAC is designed as a place where students are known, families are welcomed, and learning connects to service and responsibility.",
+      quote: "Seeking knowledge is an obligation upon every Muslim.",
+      attribution: "Prophet Muhammad ﷺ — Sunan Ibn Majah, Hadith 224",
+      body: "At UAC, learning is an act of faith and responsibility—one that strengthens the mind, shapes character, and prepares students to serve others.",
     },
     welcome: {
-      eyebrow: "You are welcome here",
-      body: "This first release establishes a direct path for English-, Arabic-, and Somali-speaking families. School-approved translations and content review remain part of the launch process.",
+      eyebrow: "Our approach",
+      title: "Welcome to UAC",
+      body: "At UAC, we believe in nurturing the whole child—academically, spiritually, and socially. Our admissions process is designed to help you understand our values and ensure we’re the right fit for your family’s educational journey.",
     },
     admissions: {
       title: "Ready to learn more about UAC?",
-      body: "Review the enrollment path and share your interest when the admissions workflow opens.",
-      action: "Enrollment form coming next",
+      body: "Explore the admissions journey, plan a visit, and take the next step for your family.",
+      action: "Explore admissions",
     },
     footer: {
-      summary: "A multilingual K-8 school experience for Columbus families.",
-      note: "Launch content is pending final school review.",
+      summary: "A welcoming K-8 school experience for Columbus families.",
+      note: "Rooted in knowledge, character, faith, and community.",
     },
   },
   ar: {
     announcement: "نرحب باهتمام العائلات بالتسجيل للعام 2026-27",
-    portal: "بوابة الموظفين · قيد التطوير",
+    portal: "من الروضة حتى الصف الثامن",
     schoolName: "الأكاديمية العالمية",
     schoolLocation: "في كولومبوس",
     navigation: sharedNavigation.ar,
@@ -144,17 +145,16 @@ export const homeContent: Record<Locale, HomeContent> = {
       eyebrow: "مجتمع مدرسي في كولومبوس",
       title: "أساس قوي لكل متعلم.",
       summary:
-        "تجمع الأكاديمية العالمية بين التعلم الجاد وبناء الشخصية ومجتمع متعدد اللغات من الروضة حتى الصف الثامن.",
+        "تجمع الأكاديمية العالمية بين التعلم الجاد وبناء الشخصية ومجتمع مدرسي شامل من الروضة حتى الصف الثامن.",
       primaryAction: "استكشف التسجيل",
       secondaryAction: "خطط لزيارة",
       highlights: [
         { value: "K-8", label: "مجتمع تعليمي واحد" },
-        { value: "3", label: "لغات للموقع" },
         { value: "كولومبوس", label: "جزء من مدينتنا" },
       ],
       visualLabel: "الشعار الرسمي للأكاديمية العالمية في كولومبوس",
     },
-    trustItems: ["العائلة أولاً", "ترحيب متعدد اللغات", "خطوات تسجيل واضحة"],
+    trustItems: ["العائلة أولاً", "مجتمع شامل ومتنوع", "خطوات تسجيل واضحة"],
     pillars: {
       eyebrow: "لماذا تختار العائلات UAC",
       title: "تعلم يجمع المعرفة والشخصية والانتماء.",
@@ -170,8 +170,8 @@ export const homeContent: Record<Locale, HomeContent> = {
           icon: "book",
         },
         {
-          title: "ترحيب متعدد اللغات",
-          body: "يمكن للعائلات استكشاف المدرسة بالإنجليزية أو العربية أو الصومالية.",
+          title: "نمو متكامل للطفل",
+          body: "يتكامل النمو الأكاديمي والروحي والاجتماعي لمساعدة كل طالب على التقدم بهدف وثقة.",
           icon: "globe",
         },
         {
@@ -185,30 +185,32 @@ export const homeContent: Record<Locale, HomeContent> = {
       eyebrow: "الرحلة الأكاديمية",
       title: "كل صف يبني خطوة واثقة نحو المستقبل.",
       body: "صممت تجربة UAC كرحلة مترابطة تبدأ بأساس قوي وتنمي الاستقلال وتستعد للانتقال بثقة إلى المرحلة الثانوية.",
-      visualLabel: "ستضاف صور الصفوف بعد اعتماد المحتوى",
+      visualLabel: "تعلم هادف من الروضة حتى الصف الثامن",
       points: ["مهارات القراءة الأساسية", "دعم هادف للطلاب", "الاستعداد للمرحلة الثانوية"],
     },
     values: {
-      quote: "تنمو المعرفة أكثر عندما تنمو معها الشخصية.",
-      body: "نسعى إلى بيئة يعرف فيها كل طالب وتشعر فيها كل عائلة بالترحيب ويرتبط التعلم بالخدمة والمسؤولية.",
+      quote: "طلب العلم فريضة على كل مسلم.",
+      attribution: "النبي محمد ﷺ — سنن ابن ماجه، الحديث 224",
+      body: "في UAC، التعلم عبادة ومسؤولية تقوي العقل، وتهذب الشخصية، وتعد الطلاب لخدمة الآخرين.",
     },
     welcome: {
-      eyebrow: "أهلاً وسهلاً بكم",
-      body: "يؤسس هذا الإصدار مساراً مباشراً للعائلات الناطقة بالإنجليزية والعربية والصومالية، مع مراجعة المدرسة للمحتوى والترجمات قبل الإطلاق.",
+      eyebrow: "نهجنا",
+      title: "مرحباً بكم في UAC",
+      body: "في UAC، نؤمن برعاية الطفل كاملاً—أكاديمياً وروحياً واجتماعياً. صُممت عملية القبول لتساعدكم على فهم قيمنا والتأكد من أننا الخيار المناسب لمسيرة عائلتكم التعليمية.",
     },
     admissions: {
       title: "هل ترغب في معرفة المزيد عن UAC؟",
-      body: "تعرف على مسار التسجيل وشارك اهتمامك عند فتح نموذج القبول.",
-      action: "نموذج التسجيل قيد الإعداد",
+      body: "تعرف على رحلة القبول، وخطط لزيارة، واتخذ الخطوة التالية لعائلتك.",
+      action: "استكشف القبول",
     },
     footer: {
-      summary: "تجربة مدرسية متعددة اللغات لعائلات كولومبوس.",
-      note: "محتوى الإطلاق بانتظار المراجعة النهائية من المدرسة.",
+      summary: "تجربة مدرسية مرحبة من الروضة حتى الصف الثامن لعائلات كولومبوس.",
+      note: "راسخة في المعرفة والشخصية والإيمان والمجتمع.",
     },
   },
   so: {
     announcement: "Waxaan soo dhoweyneynaa xiisaha diiwaangelinta 2026-27",
-    portal: "Bogga shaqaalaha · waa la dhisayaa",
+    portal: "Kindergarten ilaa fasalka siddeedaad",
     schoolName: "Universal Academy",
     schoolLocation: "of Columbus",
     navigation: sharedNavigation.so,
@@ -217,17 +219,16 @@ export const homeContent: Record<Locale, HomeContent> = {
       eyebrow: "Bulsho dugsiyeed Columbus ku taal",
       title: "Aasaas adag oo arday kasta leh.",
       summary:
-        "Universal Academy waxay isku keentaa waxbarasho adag, akhlaaq, iyo bulsho luqado badan ku hadasha laga bilaabo kindergarten ilaa fasalka siddeedaad.",
+        "Universal Academy waxay isku keentaa waxbarasho adag, akhlaaq, iyo bulsho dugsiyeed loo dhan yahay laga bilaabo kindergarten ilaa fasalka siddeedaad.",
       primaryAction: "Baro diiwaangelinta",
       secondaryAction: "Qorshee booqasho",
       highlights: [
         { value: "K-8", label: "Hal bulsho waxbarasho" },
-        { value: "3", label: "Luqadaha bogga" },
         { value: "Columbus", label: "Magaaladeenna ku xidhan" },
       ],
       visualLabel: "Astaanta rasmiga ah ee Universal Academy of Columbus",
     },
-    trustItems: ["Qoyska udub-dhexaad u ah", "Soo dhoweyn luqado badan", "Hagitaan cad"],
+    trustItems: ["Qoyska udub-dhexaad u ah", "Bulsho loo dhan yahay oo kala duwan", "Hagitaan cad"],
     pillars: {
       eyebrow: "Sababta qoysasku u doortaan UAC",
       title: "Waxbarasho isku darta aqoon, akhlaaq, iyo ka mid ahaansho.",
@@ -243,8 +244,8 @@ export const homeContent: Record<Locale, HomeContent> = {
           icon: "book",
         },
         {
-          title: "Soo dhoweyn luqado badan",
-          body: "Qoysasku waxay UAC ku baran karaan Ingiriisi, Carabi, ama Soomaali.",
+          title: "Koboca ilmaha oo dhan",
+          body: "Koboca waxbarasho, ruuxeed, iyo bulsheed ayaa wada jira si arday kastaa ugu koro ujeeddo iyo kalsooni.",
           icon: "globe",
         },
         {
@@ -258,7 +259,7 @@ export const homeContent: Record<Locale, HomeContent> = {
       eyebrow: "Safarka waxbarashada",
       title: "Fasal kasta wuxuu dhisaa tallaabo kalsooni leh.",
       body: "Waayo-aragnimada UAC waa safar isku xidhan: aasaas hore oo xooggan, madaxbannaani sii koraysa, iyo u diyaargarow mustaqbalka.",
-      visualLabel: "Sawirrada fasalka waxay imanayaan marka nuxurka la ansixiyo",
+      visualLabel: "Waxbarasho ujeeddo leh laga bilaabo kindergarten ilaa fasalka siddeedaad",
       points: [
         "Aasaaska akhriska",
         "Taageero arday oo ujeeddo leh",
@@ -266,21 +267,23 @@ export const homeContent: Record<Locale, HomeContent> = {
       ],
     },
     values: {
-      quote: "Aqoontu way sii kortaa marka akhlaaqdu la korto.",
-      body: "UAC waxaa loo dhisay meel ardayda la yaqaan, qoysaska la soo dhoweeyo, waxbarashaduna ku xidhan tahay adeeg iyo masuuliyad.",
+      quote: "Raadinta cilmigu waa waajib saaran Muslim kasta.",
+      attribution: "Nabi Muxammad ﷺ — Sunan Ibn Majah, Xadiiska 224",
+      body: "UAC, waxbarashadu waa cibaado iyo masuuliyad xoojisa maskaxda, dhista akhlaaqda, ardaydana u diyaarisa inay dadka kale u adeegaan.",
     },
     welcome: {
-      eyebrow: "Ku soo dhowow",
-      body: "Sii-dayntan koowaad waxay waddo cad u abuuraysaa qoysaska ku hadla Ingiriisi, Carabi, iyo Soomaali. Turjumaadda waxaa dib u eegi doona dugsiga ka hor daahfurka.",
+      eyebrow: "Habkayaga",
+      title: "Ku soo dhowow UAC",
+      body: "UAC, waxaan aaminsanahay kobcinta ilmaha oo dhan—waxbarashadiisa, ruuxdiisa, iyo bulshadiisa. Habka diiwaangelintu wuxuu kaa caawinayaa inaad fahanto qiyamkayaga oo aad hubiso inaan ku habboonnahay safarka waxbarasho ee qoyskaaga.",
     },
     admissions: {
       title: "Ma rabtaa inaad wax badan ka ogaato UAC?",
-      body: "Baro jidka diiwaangelinta oo nala wadaag xiisahaaga marka nidaamka codsigu furmo.",
-      action: "Foomka diiwaangelintu wuu soo socdaa",
+      body: "Baro safarka diiwaangelinta, qorshee booqasho, oo qaad tallaabada xigta ee qoyskaaga.",
+      action: "Baro diiwaangelinta",
     },
     footer: {
-      summary: "Khibrad dugsiyeed luqado badan leh oo loogu talagalay qoysaska Columbus.",
-      note: "Nuxurka daahfurku wuxuu sugayaa dib-u-eegista ugu dambeysa ee dugsiga.",
+      summary: "Khibrad dugsiyeed K-8 ah oo soo dhoweyn leh oo loogu talagalay qoysaska Columbus.",
+      note: "Ku salaysan aqoon, akhlaaq, iimaan, iyo bulsho.",
     },
   },
 };
