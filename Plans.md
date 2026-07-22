@@ -24,11 +24,11 @@ The attached build prompt is the scope authority. Phase 1 is an approval gate: n
 
 | Task | Content                                                           | DoD                                                                                                                                                                                      | Depends | Status  |
 | ---- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- |
-| 3.1  | Implement dashboard and enrollment pipeline APIs and UI           | Authorized staff can view seeded KPIs, progress leads through valid stages, record activities/follow-ups, and flag duplicates without auto-merging; validation and transition tests pass | Phase 2 | cc:TODO |
-| 3.2  | Implement student records and attendance APIs and UI              | Authorized staff can manage EMIS-aligned student/guardian/enrollment data and mark daily attendance with tested server-side permissions                                                  | 3.1     | cc:TODO |
+| 3.1  | Implement dashboard and enrollment pipeline APIs and UI           | Authorized staff can view seeded KPIs, progress leads through valid stages, record activities/follow-ups, and flag duplicates without auto-merging; validation and transition tests pass | Phase 2 | cc:完了 [f58290c] |
+| 3.2  | Implement student records and attendance APIs and UI              | Authorized staff can manage EMIS-aligned student/guardian/enrollment data and mark daily attendance with tested server-side permissions                                                  | 3.1     | cc:WIP  |
 | 3.3  | Implement messages and stubbed outbox delivery                    | Authorized staff can exchange persisted messages with families; deterministic delivery attempts are logged without external email/SMS                                                    | 3.2     | cc:TODO |
 | 3.4  | Implement reports and EMIS-aligned CSV exports                    | Authorized roles can generate funnel/attendance summaries and CSV exports whose fields match the approved EMIS mapping                                                                   | 3.2     | cc:TODO |
-| 3.5  | Implement administration, permissions management, and audit views | Only authorized administrators can manage staff grants, and every sensitive mutation creates a privacy-safe audit event                                                                  | 3.1     | cc:TODO |
+| 3.5  | Implement administration, permissions management, and audit views | Only authorized administrators can manage staff grants, and every sensitive mutation creates a privacy-safe audit event                                                                  | 3.1     | cc:WIP  |
 
 ## Phase 4: Parent portal
 
