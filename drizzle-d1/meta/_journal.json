@@ -29,6 +29,13 @@
       "when": 1784755200000,
       "tag": "0003_canonical_duplicate_pairs",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1784761200000,
+      "tag": "0004_enforce_active_staff_roles",
+      "breakpoints": true
     }
   ]
 }
