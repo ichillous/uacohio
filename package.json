@@ -15,7 +15,7 @@
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:integration:local": "LOCAL_D1_INTEGRATION=true vitest run src/modules/auth/guardian-scope.integration.test.ts && LOCAL_D1_INTEGRATION=true vitest run src/db/phase3-invariants.integration.test.ts && LOCAL_D1_INTEGRATION=true vitest run src/modules/staff/admissions/duplicate-pair.integration.test.ts",
+    "test:integration:local": "LOCAL_D1_INTEGRATION=true vitest run src/modules/auth/guardian-scope.integration.test.ts && LOCAL_D1_INTEGRATION=true vitest run src/db/phase3-invariants.integration.test.ts && LOCAL_D1_INTEGRATION=true vitest run src/modules/staff/admissions/duplicate-pair.integration.test.ts && LOCAL_D1_INTEGRATION=true vitest run src/modules/staff/students/repository.integration.test.ts && LOCAL_D1_INTEGRATION=true vitest run src/modules/staff/attendance/attendance.integration.test.ts",
     "test:watch": "vitest",
     "format": "prettier --check .",
     "format:write": "prettier --write .",

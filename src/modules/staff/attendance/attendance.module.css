@@ -1,0 +1,216 @@
+.page {
+  margin-inline: auto;
+  max-width: 1500px;
+  padding: 48px clamp(18px, 4vw, 64px) 72px;
+}
+
+.header {
+  align-items: end;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  color: #85651e;
+  font-size: 0.71rem;
+  font-weight: 850;
+  letter-spacing: 0.16em;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  color: #123d32;
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  font-weight: 520;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  margin: 0;
+}
+
+.header p:last-child {
+  color: #68746e;
+  margin: 14px 0 0;
+  max-width: 680px;
+}
+
+.headerActions {
+  align-items: end;
+  display: flex;
+  gap: 10px;
+}
+
+.dateForm {
+  display: grid;
+  font-size: 0.72rem;
+  font-weight: 800;
+  gap: 5px;
+}
+
+.dateForm input,
+.dateForm button,
+.exportLink,
+.saveButton,
+.roster select,
+.roster input {
+  border: 1px solid #cfc6af;
+  border-radius: 9px;
+  font: inherit;
+  min-height: 40px;
+  padding: 8px 10px;
+}
+
+.dateForm button,
+.exportLink,
+.saveButton {
+  background: #123d32;
+  border-color: #123d32;
+  color: #fffdf7;
+  cursor: pointer;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.exportLink {
+  align-items: center;
+  display: inline-flex;
+}
+
+.summary {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  margin-bottom: 22px;
+}
+
+.metric {
+  background: #fffdf7;
+  border: 1px solid #d9d2bf;
+  border-radius: 13px;
+  padding: 15px;
+}
+
+.metric span {
+  color: #68746e;
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.metric strong {
+  color: #123d32;
+  display: block;
+  font-family: var(--font-display), serif;
+  font-size: 1.8rem;
+  margin-top: 7px;
+}
+
+.notice,
+.error,
+.success {
+  border-radius: 10px;
+  margin: 0 0 16px;
+  padding: 12px 14px;
+}
+
+.notice {
+  background: #eee7d4;
+  color: #5e512f;
+}
+
+.error {
+  background: #f7dddd;
+  color: #782c2c;
+}
+
+.success {
+  background: #e3ecdf;
+  color: #315842;
+}
+
+.tableShell {
+  background: #fffdf7;
+  border: 1px solid #d9d2bf;
+  border-radius: 16px;
+  overflow: auto;
+}
+
+.roster {
+  border-collapse: collapse;
+  min-width: 850px;
+  width: 100%;
+}
+
+.roster th,
+.roster td {
+  border-bottom: 1px solid #e7e0ce;
+  padding: 12px 14px;
+  text-align: start;
+  vertical-align: middle;
+}
+
+.roster th {
+  background: #f7f2e6;
+  color: #68746e;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  position: sticky;
+  text-transform: uppercase;
+  top: 0;
+  z-index: 1;
+}
+
+.studentName {
+  font-weight: 800;
+}
+
+.studentName span {
+  color: #68746e;
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+.statusText {
+  text-transform: capitalize;
+}
+
+.saveBar {
+  align-items: center;
+  background: #f3eddd;
+  bottom: 0;
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  padding: 16px 0;
+  position: sticky;
+}
+
+.saveBar span {
+  color: #68746e;
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.saveButton:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+@media (max-width: 850px) {
+  .header,
+  .headerActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
