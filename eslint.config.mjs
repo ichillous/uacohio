@@ -9,6 +9,7 @@ export default defineConfig([
     ".next/**",
     ".open-next/**",
     ".wrangler/**",
+    "cloudflare-env.d.ts",
     "coverage/**",
     "node_modules/**",
     "playwright-report/**",

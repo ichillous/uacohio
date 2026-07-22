@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1784741647670,
+      "tag": "0000_chunky_timeslip",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1784743018322,
+      "tag": "0001_validate_portal_codes",
+      "breakpoints": true
+    }
+  ]
+}

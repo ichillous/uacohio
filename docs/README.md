@@ -18,6 +18,9 @@ Repository baseline: Empty `main` branch as of 2026-07-18
 - [ADR-004: Invite-only staff authentication and RBAC](./architecture/ADR-004-staff-authentication-rbac.md)
 - [ADR-005: Repository-first media and bounded content management](./architecture/ADR-005-content-and-media.md)
 - [ADR-006: Transactional messaging through an adapter and outbox](./architecture/ADR-006-messaging-outbox.md)
+- [ADR-007: Cloudflare D1 local foundation and separate migration lineage](./architecture/ADR-007-cloudflare-d1-local-foundation.md)
+
+ADR-007 and the approved [portal analysis](./portal-analysis.md) govern the current local portal build where they conflict with the older Hostinger/MariaDB proposals. Production cutover remains unapproved.
 
 ## Requirement hierarchy
 

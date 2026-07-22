@@ -14,6 +14,16 @@
       "service": "uacohio",
     },
   ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "uacohio-local",
+      "database_id": "local",
+      "preview_database_id": "local",
+      "migrations_dir": "drizzle-d1",
+      "migrations_pattern": "drizzle-d1/*.sql",
+    },
+  ],
   "r2_buckets": [
     {
       "binding": "NEXT_INC_CACHE_R2_BUCKET",

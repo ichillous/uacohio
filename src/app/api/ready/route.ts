@@ -1,15 +1,26 @@
+import { getD1Database } from "@/db/d1";
 import { readRuntimeEnvironment, runtimeReadiness } from "@/lib/env/server";
 
 export const dynamic = "force-dynamic";
 
-export function GET() {
+export async function GET() {
   const environment = readRuntimeEnvironment();
-  const readiness = runtimeReadiness(environment);
+  let databaseAvailable = false;
+
+  try {
+    const database = await getD1Database();
+    const result = await database.prepare("SELECT 1 AS healthy").first<{ healthy: number }>();
+    databaseAvailable = result?.healthy === 1;
+  } catch {
+    databaseAvailable = false;
+  }
+
+  const readiness = runtimeReadiness(environment, databaseAvailable);
 
   return Response.json(
     {
       checks: {
-        databaseConfigured: readiness.databaseConfigured,
+        databaseAvailable: readiness.databaseAvailable,
       },
       environment: environment.APP_ENV,
       service: "uacohio-web",
@@ -18,7 +29,7 @@ export function GET() {
     },
     {
       headers: {
-        "Cache-Control": "no-store",
+        "Cache-Control": "private, no-store",
       },
       status: readiness.ready ? 200 : 503,
     },

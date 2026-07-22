@@ -1,6 +1,8 @@
 .next/
 .playwright-cli/
 coverage/
+cloudflare-env.d.ts
+drizzle-d1/meta/
 node_modules/
 output/
 playwright-report/

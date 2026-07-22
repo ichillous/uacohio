@@ -1,39 +1,45 @@
 # Universal Academy of Columbus
 
-This repository contains the new multilingual UAC website and the source-controlled product, technical, and architecture documents that govern its development.
+This repository contains the multilingual UAC public website and the local-first foundation for staff/admin and parent portals.
 
 ## Current implementation
 
-- Next.js 16 App Router with strict TypeScript;
-- English, Arabic, and Somali routes at `/en`, `/ar`, and `/so`;
-- localized Admissions, Academics, Student Life, About, and Contact pages;
-- server-rendered RTL document direction for Arabic;
-- UAC design tokens and responsive homepage vertical slice;
-- liveness and readiness endpoints at `/api/health` and `/api/ready`;
-- local MariaDB service and initial Drizzle schema;
-- linting, formatting, typechecking, unit tests, production build, and GitHub Actions CI.
+- Next.js 16 App Router with strict TypeScript and OpenNext for Cloudflare Workers;
+- English, Arabic, and Somali public routes, with server-rendered RTL direction for Arabic;
+- a Cloudflare D1/SQLite schema covering identity, admissions, students, attendance, messaging, notifications, and audit history;
+- provider-neutral sessions, server-side staff permissions, and guardian relationship scoping;
+- a development-only, passwordless identity switcher at `/en/dev-login`;
+- deterministic synthetic data with 200 students, six staff personas, linked guardians, 30 leads across all pipeline stages, and 9,000 daily attendance rows;
+- liveness and D1-backed readiness endpoints at `/api/health` and `/api/ready`.
 
-The current public copy is a development draft. School facts, translations, addresses, contact details, photography, and claims require content-owner approval before launch.
+The current public copy and every seeded portal record are development data. School facts, translations, addresses, contact details, photography, and claims require content-owner approval before launch.
 
 ## Local setup
 
-Use Node.js 22 and pnpm 10.
+Use Node.js 22 and pnpm 10. Wrangler simulates the D1 binding locally; Docker and MariaDB are not required.
 
 ```bash
 cp .env.example .env.local
 pnpm install
-pnpm dev
+pnpm dev:local
 ```
 
-Open `http://localhost:3000`; the locale proxy redirects to `/en`.
+`pnpm dev:local` applies local-only D1 migrations, replaces local data with the deterministic seed, verifies its invariants, and starts Next.js. Open `http://localhost:3000/en/dev-login` and choose any seeded staff or guardian identity.
 
-To start the local MariaDB service:
+The seed command is intentionally destructive only to the local Wrangler database. It refuses to run when `APP_ENV` is anything other than `development` or `test`.
+
+Useful database commands:
 
 ```bash
-docker compose up -d database
+pnpm db:migrate:local
+pnpm db:seed:local
+pnpm db:verify:local
+pnpm db:setup:local
 ```
 
-To run the quality gate:
+New D1 migrations are generated in `drizzle-d1/`. The older files in `drizzle/` are frozen MySQL migration evidence and are guarded by checksums; do not run or edit them.
+
+## Quality gate
 
 ```bash
 pnpm format
@@ -43,10 +49,12 @@ pnpm test
 pnpm build
 ```
 
+The combined gate is `pnpm check`. Local success does not establish staging or production readiness.
+
 ## Production boundary
 
-Do not connect this scaffold to production family, student, or staff data. Do not replace the current Hostinger website from an automated task. Follow [the Hostinger Sprint 0 proof runbook](./docs/runbooks/HOSTINGER_SPRINT_0.md) on an isolated staging site first.
+Do not connect this local phase to production family, student, or staff data. Do not deploy, provision Cloudflare resources, change DNS, configure Google OAuth, or replace the current website from this workflow. Production identity, data migration, provider delivery, and staging acceptance remain separately approved work.
 
 ## Governing documents
 
-Start with [the documentation index](./docs/README.md), then review the Development Plan, Technical Requirements Document, System Design Document, and architecture decision records before expanding the application.
+Start with [the documentation index](./docs/README.md), [the approved portal analysis](./docs/portal-analysis.md), and [the D1 schema notes](./docs/schema.md) before expanding the application.

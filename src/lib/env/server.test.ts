@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { readRuntimeEnvironment, runtimeReadiness } from "./server";
+import { isDevAuthAllowed, readRuntimeEnvironment, runtimeReadiness } from "./server";
 
 describe("runtime environment", () => {
   it("uses safe local defaults without requiring production secrets", () => {
@@ -8,27 +8,28 @@ describe("runtime environment", () => {
 
     expect(environment.APP_ENV).toBe("development");
     expect(environment.NEXT_PUBLIC_SITE_URL).toBe("http://localhost:3000");
-    expect(runtimeReadiness(environment).ready).toBe(true);
+    expect(environment.DEV_AUTH_ENABLED).toBe(false);
   });
 
-  it("fails readiness when a required database is not configured", () => {
-    const environment = readRuntimeEnvironment({ REQUIRE_DATABASE: "true" });
+  it("requires a working D1 binding for readiness", () => {
+    const environment = readRuntimeEnvironment({});
 
-    expect(runtimeReadiness(environment)).toEqual({
-      databaseConfigured: false,
+    expect(runtimeReadiness(environment, false)).toEqual({
+      databaseAvailable: false,
       ready: false,
     });
+    expect(runtimeReadiness(environment, true)).toEqual({ databaseAvailable: true, ready: true });
   });
 
-  it("never exposes the database URL in readiness output", () => {
+  it("permits dummy auth only in local or test environments", () => {
     const environment = readRuntimeEnvironment({
-      DATABASE_URL: "mysql://example:secret@localhost/uac",
-      REQUIRE_DATABASE: "true",
+      APP_ENV: "development",
+      DEV_AUTH_ENABLED: "true",
     });
 
-    expect(runtimeReadiness(environment)).toEqual({
-      databaseConfigured: true,
-      ready: true,
-    });
+    expect(isDevAuthAllowed(environment)).toBe(true);
+    expect(() =>
+      readRuntimeEnvironment({ APP_ENV: "production", DEV_AUTH_ENABLED: "true" }),
+    ).toThrow(/DEV_AUTH_ENABLED/);
   });
 });

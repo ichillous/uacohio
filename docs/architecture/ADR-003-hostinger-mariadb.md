@@ -1,6 +1,6 @@
 # ADR-003: Use Hostinger MariaDB as the Release 1 operational database
 
-Status: Proposed, contingent on plan verification  
+Status: Superseded for the local portal build by ADR-007
 Date: 2026-07-18
 
 ## Context
