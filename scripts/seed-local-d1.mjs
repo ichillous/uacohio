@@ -314,6 +314,27 @@ insertRows(
   ["id", "school_year_id", "name", "starts_on", "ends_on"],
   [["term-fall-2025", "school-year-2025", "Fall", "2025-08-18", "2025-12-19"]],
 );
+insertRows(
+  "seat_capacity",
+  [
+    "id",
+    "school_year_id",
+    "grade_level_code",
+    "capacity",
+    "source",
+    "approved_owner",
+    "refreshed_at",
+  ],
+  Array.from({ length: 9 }, (_, grade) => [
+    `seat-capacity-${String(grade).padStart(2, "0")}`,
+    "school-year-2025",
+    String(grade).padStart(2, "0"),
+    60 + (grade % 3) * 5,
+    "approved-local-seed",
+    "School Leadership",
+    "2026-07-22T12:00:00.000Z",
+  ]),
+);
 
 const studentRows = [];
 const guardianStudentRows = [];
@@ -463,6 +484,8 @@ const stages = ["inquiry", "contacted", "toured", "applied", "enrolled", "closed
 const prospectRows = [];
 const leadRows = [];
 const stageRows = [];
+const activityRows = [];
+const followUpRows = [];
 const applicationRows = [];
 const guardianApplicationRows = [];
 for (let index = 1; index <= 30; index += 1) {
@@ -484,7 +507,7 @@ for (let index = 1; index <= 30; index += 1) {
     index % 2 === 0 ? "community_event" : "website",
     index % 2 === 0 ? "summer-outreach" : "organic",
     familyRows[index - 1][1],
-    "2025-09-15T15:00:00.000Z",
+    index % 3 === 0 ? "2026-07-20T15:00:00.000Z" : "2026-07-24T15:00:00.000Z",
   ]);
   stageRows.push([
     `lead-stage-${padded}`,
@@ -493,6 +516,23 @@ for (let index = 1; index <= 30; index += 1) {
     stage,
     staffUsers[2][0],
     "Deterministic local seed",
+  ]);
+  activityRows.push([
+    `lead-activity-${padded}`,
+    `lead-${padded}`,
+    index % 2 === 0 ? "phone_call" : "email_stub",
+    index % 3 === 0 ? "follow_up_needed" : "family_reached",
+    "Synthetic local activity; no external delivery occurred.",
+    staffUsers[2][0],
+    index % 3 === 0 ? "2026-07-20T15:00:00.000Z" : "2026-07-24T15:00:00.000Z",
+  ]);
+  followUpRows.push([
+    `follow-up-${padded}`,
+    `lead-${padded}`,
+    staffUsers[2][0],
+    index % 3 === 0 ? "2026-07-20T15:00:00.000Z" : "2026-07-24T15:00:00.000Z",
+    index % 5 === 0 ? "2026-07-21T14:00:00.000Z" : null,
+    index % 5 === 0 ? "family_reached" : null,
   ]);
 
   if (stage === "applied" || stage === "enrolled") {
@@ -538,6 +578,49 @@ insertRows(
   "lead_stage_history",
   ["id", "lead_id", "from_stage", "to_stage", "actor_user_id", "reason"],
   stageRows,
+);
+insertRows(
+  "lead_activities",
+  ["id", "lead_id", "type", "outcome", "safe_note", "actor_user_id", "next_action_at"],
+  activityRows,
+);
+insertRows(
+  "follow_up_tasks",
+  ["id", "lead_id", "owner_user_id", "due_at", "completed_at", "outcome"],
+  followUpRows,
+);
+insertRows(
+  "duplicate_candidates",
+  ["id", "lead_id", "candidate_lead_id", "signals", "state", "reviewer_user_id", "reviewed_at"],
+  [
+    [
+      "duplicate-001",
+      "lead-001",
+      "lead-007",
+      JSON.stringify(["normalized_phone", "guardian_name"]),
+      "pending",
+      null,
+      null,
+    ],
+    [
+      "duplicate-002",
+      "lead-002",
+      "lead-008",
+      JSON.stringify(["normalized_email"]),
+      "not_duplicate",
+      staffUsers[2][0],
+      "2026-07-21T16:00:00.000Z",
+    ],
+    [
+      "duplicate-003",
+      "lead-003",
+      "lead-009",
+      JSON.stringify(["normalized_phone", "address_fragment"]),
+      "duplicate_confirmed",
+      staffUsers[0][0],
+      "2026-07-21T17:00:00.000Z",
+    ],
+  ],
 );
 insertRows(
   "applications",
@@ -600,7 +683,7 @@ insertRows(
   "system_metadata",
   ["key", "value"],
   [
-    ["seed.version", "phase-2-v1"],
+    ["seed.version", "phase-3-v1"],
     ["seed.generated_at", "2025-08-18T00:00:00.000Z"],
   ],
 );

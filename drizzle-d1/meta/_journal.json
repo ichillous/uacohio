@@ -15,6 +15,20 @@
       "when": 1784743018322,
       "tag": "0001_validate_portal_codes",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1784750646497,
+      "tag": "0002_enforce_phase3_invariants",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1784755200000,
+      "tag": "0003_canonical_duplicate_pairs",
+      "breakpoints": true
     }
   ]
 }
