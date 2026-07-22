@@ -8,9 +8,9 @@ The attached build prompt is the scope authority. Phase 1 is an approval gate: n
 
 ## Phase 1: Graph-driven analysis and approval
 
-| Task | Content                                                                         | DoD                                                                                                                                                                                                                            | Depends | Status |
-| ---- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------ |
-| 1.1  | Produce the staff/admin and parent portal analysis in `docs/portal-analysis.md` | The document covers the existing-schema delta, module boundaries, role/action permissions, guardian-student authorization, parent spec, EMIS mapping, BR/ADM traceability, resolved conflicts, and explicit approval questions | -       | cc:WIP |
+| Task | Content                                                                         | DoD                                                                                                                                                                                                                            | Depends | Status            |
+| ---- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ----------------- |
+| 1.1  | Produce the staff/admin and parent portal analysis in `docs/portal-analysis.md` | The document covers the existing-schema delta, module boundaries, role/action permissions, guardian-student authorization, parent spec, EMIS mapping, BR/ADM traceability, resolved conflicts, and explicit approval questions | -       | cc:完了 [2525f39] |
 
 ## Phase 2: Local foundation
 
