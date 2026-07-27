@@ -3,7 +3,7 @@ import { spawnSync } from "node:child_process";
 function executeLocalQuery(query) {
   const result = spawnSync(
     "pnpm",
-    ["exec", "wrangler", "d1", "execute", "uacohio-local", "--local", "--command", query, "--json"],
+    ["exec", "wrangler", "d1", "execute", "DB", "--local", "--command", query, "--json"],
     { encoding: "utf8" },
   );
 

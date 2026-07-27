@@ -1016,7 +1016,7 @@ try {
   await writeFile(seedFile, `${statements.join("\n")}\n`, "utf8");
   const result = spawnSync(
     "pnpm",
-    ["exec", "wrangler", "d1", "execute", "uacohio-local", "--local", "--file", seedFile],
+    ["exec", "wrangler", "d1", "execute", "DB", "--local", "--file", seedFile],
     { encoding: "utf8", stdio: "inherit" },
   );
 

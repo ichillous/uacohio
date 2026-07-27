@@ -17,9 +17,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "uacohio-local",
-      "database_id": "local",
-      "preview_database_id": "local",
+      "database_name": "uacohio-production",
+      "database_id": "6515c780-d99e-4af9-b986-c33c1f9c7c36",
       "migrations_dir": "drizzle-d1",
       "migrations_pattern": "drizzle-d1/*.sql",
     },

@@ -27,7 +27,7 @@
     "cf-typegen": "wrangler types --env-file .env.example --env-interface CloudflareEnv cloudflare-env.d.ts",
     "db:generate": "drizzle-kit generate",
     "db:check": "drizzle-kit check",
-    "db:migrate:local": "wrangler d1 migrations apply uacohio-local --local",
+    "db:migrate:local": "wrangler d1 migrations apply DB --local",
     "db:seed:local": "node scripts/seed-local-d1.mjs",
     "db:verify:local": "node scripts/verify-local-d1.mjs && pnpm test:integration:local",
     "db:setup:local": "pnpm db:migrate:local && pnpm db:seed:local && pnpm db:verify:local",

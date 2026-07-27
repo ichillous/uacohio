@@ -53,7 +53,11 @@ The combined gate is `pnpm check`. Local success does not establish staging or p
 
 ## Production boundary
 
-Do not connect this local phase to production family, student, or staff data. Do not deploy, provision Cloudflare resources, change DNS, configure Google OAuth, or replace the current website from this workflow. Production identity, data migration, provider delivery, and staging acceptance remain separately approved work.
+The production Worker has an explicitly approved D1 binding with the committed
+schema only. Do not load production family, student, or staff data, run the
+synthetic local seed remotely, change DNS, configure Google OAuth, or replace the
+current website without separate approval. Production identity, data migration,
+provider delivery, and staging acceptance remain separately approved work.
 
 ## Governing documents
 
