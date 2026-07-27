@@ -4,6 +4,10 @@ import type { ReactNode } from "react";
 import { homeContent } from "@/modules/public-site/content/home";
 import type { PublicPageSlug } from "@/modules/public-site/content/routes";
 import { localeNames, locales, type Locale } from "@/modules/shared/i18n/locales";
+import {
+  schoolUniformStoreContent,
+  schoolUniformStoreUrl,
+} from "@/modules/shared/school-resources";
 
 import { OfficialLogo } from "./official-logo";
 
@@ -96,6 +100,7 @@ export function Brand({ locale }: { locale: Locale }) {
 export function SiteChrome({ activePage, children, locale }: SiteChromeProps) {
   const content = homeContent[locale];
   const labels = interfaceLabels[locale];
+  const uniformStore = schoolUniformStoreContent[locale];
 
   return (
     <>
@@ -167,6 +172,18 @@ export function SiteChrome({ activePage, children, locale }: SiteChromeProps) {
             <p>{content.footer.summary}</p>
           </div>
           <div className="footer-meta">
+            <div className="footer-resource">
+              <p className="footer-resource-label">{uniformStore.resourcesLabel}</p>
+              <a
+                className="footer-resource-link"
+                href={schoolUniformStoreUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {uniformStore.action}
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
             <p>{content.footer.note}</p>
             <p>© {new Date().getFullYear()} Universal Academy of Columbus</p>
           </div>

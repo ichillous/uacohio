@@ -839,6 +839,35 @@ summary {
   text-align: end;
 }
 
+.footer-resource {
+  margin-block-end: 20px;
+}
+
+.footer-meta .footer-resource-label {
+  color: #b8d3df;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin-block-end: 6px;
+  text-transform: uppercase;
+}
+
+.footer-resource-link {
+  align-items: center;
+  color: #fff;
+  display: inline-flex;
+  font-weight: 750;
+  gap: 7px;
+  text-decoration-color: rgb(255 255 255 / 45%);
+  text-underline-offset: 4px;
+}
+
+.footer-resource-link:hover,
+.footer-resource-link:focus-visible {
+  color: var(--color-gold-light);
+  text-decoration-color: currentcolor;
+}
+
 .footer-meta p {
   color: #91adba;
   font-size: 0.83rem;
