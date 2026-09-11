@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { homeContent } from "@/modules/public-site/content/home";
+import { schoolMealsContent } from "@/modules/public-site/content/school-meals";
 import type { PublicPageSlug } from "@/modules/public-site/content/routes";
 import { localeNames, locales, type Locale } from "@/modules/shared/i18n/locales";
 import {
@@ -112,7 +113,11 @@ export function SiteChrome({ activePage, children, locale }: SiteChromeProps) {
         <div className="shell utility-inner">
           <p className="announcement">
             <span aria-hidden="true" className="announcement-dot" />
-            {content.announcement}
+            {activePage ? (
+              content.announcement
+            ) : (
+              <a href="#school-meals">{schoolMealsContent[locale].announcement}</a>
+            )}
           </p>
           <div className="utility-actions">
             <span className="portal-status">{content.portal}</span>

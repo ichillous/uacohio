@@ -1,0 +1,143 @@
+.section {
+  padding-block: clamp(36px, 5vw, 64px) 0;
+  scroll-margin-block-start: 96px;
+}
+
+.notice {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-block-start: 5px solid var(--color-sky);
+  box-shadow: var(--shadow-soft);
+}
+
+.overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  padding: clamp(24px, 4vw, 44px);
+}
+
+.eyebrow {
+  color: var(--color-blue-mid);
+  font-size: 0.875rem;
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.overview h2 {
+  color: var(--color-navy);
+  font-family: var(--font-display), var(--font-arabic), serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.15;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.overview p:not(.eyebrow) {
+  line-height: 1.7;
+  margin: 16px 0 0;
+}
+
+.application {
+  font-weight: 600;
+}
+
+.contact {
+  background: var(--color-ice);
+  padding: 24px;
+  min-width: 0;
+}
+
+.contact h3 {
+  color: var(--color-navy);
+  font-size: 1rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.notice address {
+  font-style: normal;
+  line-height: 1.7;
+  margin-block: 16px 0;
+}
+
+.notice address span,
+.contact address > a {
+  display: block;
+}
+
+.notice a {
+  color: var(--color-navy);
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
+
+.contact address > a {
+  align-content: center;
+  min-height: 44px;
+  font-weight: 700;
+}
+
+.disclosure {
+  border-block-start: 1px solid var(--color-line);
+}
+
+.disclosure summary {
+  color: var(--color-navy);
+  cursor: pointer;
+  font-weight: 750;
+  padding: 20px clamp(24px, 4vw, 44px);
+}
+
+.disclosure summary:hover,
+.disclosure summary:focus-visible {
+  background: var(--color-ice);
+}
+
+.disclosure summary:focus-visible {
+  outline-offset: -4px;
+}
+
+.disclosure[open] summary {
+  border-block-end: 1px solid var(--color-line);
+}
+
+.release {
+  font-family: var(--font-body), system-ui, sans-serif;
+  line-height: 1.75;
+  margin-inline: auto;
+  max-width: 78ch;
+  padding: 32px clamp(24px, 4vw, 44px) 40px;
+  text-align: start;
+}
+
+.release h3 {
+  color: var(--color-navy);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin: 0 0 16px;
+}
+
+.release h4 {
+  font-size: 1rem;
+  margin: 32px 0 16px;
+}
+
+.release p {
+  margin: 0 0 20px;
+}
+
+.release .releaseSubtitle {
+  font-weight: 700;
+  margin-block-end: 0;
+}
+
+.release address {
+  margin-block: 0 24px;
+}
+
+@media (max-width: 760px) {
+  .overview {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
