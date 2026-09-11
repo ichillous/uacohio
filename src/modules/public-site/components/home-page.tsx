@@ -2,6 +2,7 @@ import { homeContent } from "@/modules/public-site/content/home";
 import type { Locale } from "@/modules/shared/i18n/locales";
 
 import { OfficialLogo } from "./official-logo";
+import { SchoolMeals } from "./school-meals";
 import { SiteChrome } from "./site-chrome";
 import { UacMark } from "./uac-mark";
 
@@ -91,6 +92,8 @@ export function HomePage({ locale }: HomePageProps) {
             ))}
           </div>
         </section>
+
+        <SchoolMeals locale={locale} />
 
         <section className="section shell" id="student-life">
           <div className="section-heading section-heading-centered">
